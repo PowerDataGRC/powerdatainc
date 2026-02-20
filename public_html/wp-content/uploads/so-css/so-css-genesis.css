@@ -1,0 +1,12 @@
+/**
+ * Remove page header 
+ */
+
+.page .entry-header {
+  display: none;
+}
+
+/* Normalize the menu items */
+.genesis-nav-menu > .menu-item > a {
+    text-transform: capitalize;
+}

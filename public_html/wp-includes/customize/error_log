@@ -1,0 +1,7 @@
+[31-Jul-2020 02:09:09 UTC] PHP Fatal error:  Class 'WP_Customize_Control' not found in /home/bijoux9/powerdatabi.com/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17
+[31-Jul-2020 11:07:50 UTC] PHP Fatal error:  Class 'WP_Customize_Control' not found in /home/bijoux9/powerdatabi.com/wp-includes/customize/class-wp-customize-theme-control.php on line 17
+[31-Jul-2020 11:07:53 UTC] PHP Fatal error:  Class 'WP_Customize_Control' not found in /home/bijoux9/powerdatabi.com/wp-includes/customize/class-wp-customize-theme-control.php on line 17
+[31-Jul-2020 11:30:53 UTC] PHP Fatal error:  Class 'WP_Customize_Control' not found in /home/bijoux9/powerdatabi.com/wp-includes/customize/class-wp-customize-theme-control.php on line 17
+[31-Jul-2020 11:30:56 UTC] PHP Fatal error:  Class 'WP_Customize_Control' not found in /home/bijoux9/powerdatabi.com/wp-includes/customize/class-wp-customize-theme-control.php on line 17
+[01-Aug-2020 14:31:49 UTC] PHP Fatal error:  Class 'WP_Customize_Control' not found in /home/bijoux9/powerdatabi.com/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17
+[01-Aug-2020 14:32:14 UTC] PHP Fatal error:  Class 'WP_Customize_Control' not found in /home/bijoux9/powerdatabi.com/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17

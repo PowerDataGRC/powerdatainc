@@ -1,0 +1,436 @@
+0000.000 (0) Opened log file at time: Sun, 11 Dec 2022 17:34:29 +0000 on https://powerdatainc.com
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.22.23 WP: 6.1.1 PHP: 8.0.25 (litespeed, Linux us-phx-web867.main-hosting.eu 4.18.0-372.9.1.1.lve.el8.x86_64 #1 SMP Tue May 24 07:49:22 EDT 2022 x86_64) MySQL: 10.6.11-MariaDB-cll-lve (max packet size=1073741824) WPLANG: en_US Server: LiteSpeed safe_mode: 0 max_execution_time: 900 memory_limit: 2048M (used: 11M | 12M) multisite: N openssl: OpenSSL 1.1.1p  21 Jun 2022 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.002 (0) Free space on disk containing Updraft's temporary directory: 4242643.5 MB
+0000.004 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.006 (0) Semaphore (fd, wphq_options) being initialised
+0000.007 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.008 (0) Set semaphore last lock (fd) time to 2022-12-11 17:34:29
+0000.009 (0) Semaphore lock (fd) complete
+0000.011 (0) Backup run: resumption=0, nonce=b163a8bde6cb, file_nonce=b163a8bde6cb begun at=1670780069 (0s ago), job type=backup
+0000.012 (0) Scheduling a resumption (1) after 300 seconds (1670780369) in case this run gets aborted
+0000.039 (0) Checking if we have a zip executable available
+0000.039 (0) Testing: /usr/bin/zip
+0000.045 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.046 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.046 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.047 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.047 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.052 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.053 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.054 (0) Working binary zip found: /usr/bin/zip
+0000.055 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.055 (0) Creation of backups of directories: beginning
+0000.057 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.565 (0) Total entities for the zip file: 1760 directories, 6695 files (0 skipped as non-modified), 92.3 MB
+0000.583 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.600 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.616 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.631 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.647 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.662 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0000.677 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0000.693 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 800 files added (on-disk size: 0 KB)
+0000.709 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 900 files added (on-disk size: 0 KB)
+0000.723 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0000.724 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (17.9 MB, 6695 files batched, 1001 (1001) added so far); re-opening (prior size: 0 KB)
+0001.385 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: size is now: 3.10 MB
+0001.407 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1100 files added (on-disk size: 3220.8 KB)
+0001.428 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1200 files added (on-disk size: 3220.8 KB)
+0001.445 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1300 files added (on-disk size: 3220.8 KB)
+0001.457 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1400 files added (on-disk size: 3220.8 KB)
+0001.470 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1500 files added (on-disk size: 3220.8 KB)
+0001.487 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1600 files added (on-disk size: 3220.8 KB)
+0001.503 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1700 files added (on-disk size: 3220.8 KB)
+0001.515 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1800 files added (on-disk size: 3220.8 KB)
+0001.530 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 1900 files added (on-disk size: 3220.8 KB)
+0001.542 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2000 files added (on-disk size: 3220.8 KB)
+0001.543 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (6 MB, 6695 files batched, 1001 (2002) added so far); re-opening (prior size: 3220.8 KB)
+0001.864 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: size is now: 4.80 MB
+0001.885 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2100 files added (on-disk size: 4885.2 KB)
+0001.901 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2200 files added (on-disk size: 4885.2 KB)
+0001.915 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2300 files added (on-disk size: 4885.2 KB)
+0001.930 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2400 files added (on-disk size: 4885.2 KB)
+0001.942 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2500 files added (on-disk size: 4885.2 KB)
+0001.953 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2600 files added (on-disk size: 4885.2 KB)
+0001.964 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2700 files added (on-disk size: 4885.2 KB)
+0001.978 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2800 files added (on-disk size: 4885.2 KB)
+0001.995 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 2900 files added (on-disk size: 4885.2 KB)
+0002.011 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3000 files added (on-disk size: 4885.2 KB)
+0002.013 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (18.9 MB, 6695 files batched, 1001 (3003) added so far); re-opening (prior size: 4885.2 KB)
+0003.088 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: size is now: 10.10 MB
+0003.107 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3100 files added (on-disk size: 10314.6 KB)
+0003.124 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3200 files added (on-disk size: 10314.6 KB)
+0003.141 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3300 files added (on-disk size: 10314.6 KB)
+0003.158 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3400 files added (on-disk size: 10314.6 KB)
+0003.175 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3500 files added (on-disk size: 10314.6 KB)
+0003.193 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3600 files added (on-disk size: 10314.6 KB)
+0003.210 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3700 files added (on-disk size: 10314.6 KB)
+0003.228 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3800 files added (on-disk size: 10314.6 KB)
+0003.247 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 3900 files added (on-disk size: 10314.6 KB)
+0003.265 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4000 files added (on-disk size: 10314.6 KB)
+0003.266 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (11.1 MB, 6695 files batched, 1001 (4004) added so far); re-opening (prior size: 10314.6 KB)
+0003.899 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: size is now: 13.40 MB
+0003.914 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4100 files added (on-disk size: 13717.9 KB)
+0003.926 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4200 files added (on-disk size: 13717.9 KB)
+0003.938 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4300 files added (on-disk size: 13717.9 KB)
+0003.949 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4400 files added (on-disk size: 13717.9 KB)
+0003.961 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4500 files added (on-disk size: 13717.9 KB)
+0003.978 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4600 files added (on-disk size: 13717.9 KB)
+0003.995 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4700 files added (on-disk size: 13717.9 KB)
+0004.012 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4800 files added (on-disk size: 13717.9 KB)
+0004.027 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 4900 files added (on-disk size: 13717.9 KB)
+0004.038 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5000 files added (on-disk size: 13717.9 KB)
+0004.039 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (9.1 MB, 6695 files batched, 1001 (5005) added so far); re-opening (prior size: 13717.9 KB)
+0004.602 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: size is now: 16.40 MB
+0004.619 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5100 files added (on-disk size: 16754 KB)
+0004.631 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5200 files added (on-disk size: 16754 KB)
+0004.643 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5300 files added (on-disk size: 16754 KB)
+0004.654 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5400 files added (on-disk size: 16754 KB)
+0004.664 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5500 files added (on-disk size: 16754 KB)
+0004.676 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5600 files added (on-disk size: 16754 KB)
+0004.686 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5700 files added (on-disk size: 16754 KB)
+0004.696 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5800 files added (on-disk size: 16754 KB)
+0004.706 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 5900 files added (on-disk size: 16754 KB)
+0004.717 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 6000 files added (on-disk size: 16754 KB)
+0004.719 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (18.2 MB, 6695 files batched, 1001 (6006) added so far); re-opening (prior size: 16754 KB)
+0006.264 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: size is now: 25.80 MB
+0006.277 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 6100 files added (on-disk size: 26447.3 KB)
+0006.288 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 6200 files added (on-disk size: 26447.3 KB)
+0006.299 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 6300 files added (on-disk size: 26447.3 KB)
+0006.310 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 6400 files added (on-disk size: 26447.3 KB)
+0006.325 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 6500 files added (on-disk size: 26447.3 KB)
+0006.343 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.tmp: 6600 files added (on-disk size: 26447.3 KB)
+0007.786 (0) Creating zip file manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.list-temp.tmp)
+0007.807 (0) Successfully created zip file manifest (size: 610829)
+0008.259 (0) Created plugins zip (0) - 31642.2 KB in 8.2 s (3858.5 KB/s) (sha1: 10c3866cf90032c1196b294c3c6349451fde72dc, sha256: 15926bcd35e55d5744395cb32b1eb91a9a46771c59033d2ba69c1d8ee52c1dd5)
+0008.265 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0008.266 (0) No remote despatch: user chose no remote backup service
+0008.267 (0) Recording as successfully uploaded: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip
+0008.268 (0) Deleting zip manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip.list.tmp)
+0008.270 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0008.271 (0) Number of backup sets in history: 0; groups (db): 1
+0008.272 (0) Number of backup sets in history: 0; groups (files): 1
+0008.272 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0008.276 (0) Beginning creation of dump of themes (split every: 400 MB)
+0008.299 (0) Total entities for the zip file: 77 directories, 609 files (0 skipped as non-modified), 10.6 MB
+0008.311 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0008.321 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0008.331 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0008.341 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0008.351 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.tmp: 500 files added (on-disk size: 0 KB)
+0008.361 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.tmp: 600 files added (on-disk size: 0 KB)
+0008.695 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.tmp: size is now: 8.70 MB
+0008.705 (0) Creating zip file manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.list-temp.tmp)
+0008.708 (0) Successfully created zip file manifest (size: 37681)
+0008.845 (0) Created themes zip (0) - 8921.3 KB in 0.6 s (15719.9 KB/s) (sha1: be1872e17936116b7d766058d0fedd5aaa6bad71, sha256: a1291668bb54e2c126652576d8e82d65377a863f9f045896a090c8d3df909992)
+0008.848 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0008.849 (0) No remote despatch: user chose no remote backup service
+0008.849 (0) Recording as successfully uploaded: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip
+0008.851 (0) Deleting zip manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip.list.tmp)
+0008.852 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0008.853 (0) Number of backup sets in history: 0; groups (db): 1
+0008.853 (0) Number of backup sets in history: 0; groups (files): 1
+0008.854 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0008.858 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0008.858 (0) Looking for candidates to backup in: /home/u877180305/domains/powerdatainc.com/public_html/wp-content/uploads
+0008.859 (0) finding files: 2022: adding to list (1)
+0008.859 (0) finding files: elementor: adding to list (2)
+0008.859 (0) finding files: custom-css-js: adding to list (3)
+0008.860 (0) finding files: 2020: adding to list (4)
+0008.860 (0) finding files: wpforms: adding to list (5)
+0008.861 (0) finding files: wpcf7_uploads: adding to list (6)
+0008.861 (0) finding files: brizy: adding to list (7)
+0008.862 (0) finding files: 2021: adding to list (8)
+0008.862 (0) finding files: siteorigin-widgets: adding to list (9)
+0008.863 (0) finding files: rank-math: adding to list (10)
+0008.863 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0008.936 (0) Total entities for the zip file: 47 directories, 458 files (0 skipped as non-modified), 197 MB
+0008.949 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0008.955 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (35 MB, 458 files batched, 129 (129) added so far); re-opening (prior size: 0 KB)
+0010.258 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.tmp: size is now: 35.00 MB
+0010.260 (0) A useful amount of data was added after this amount of zip processing: 2 s (normalised: 1.4 s, rate: 17987.2 KB/s)
+0010.261 (0) Performance is good - will increase the amount of data we attempt to batch (time=1.9920489788055, normalised_time=1.4232357969456, max_time=10.260448217392, data points known=1, old_max_bytes=26214400, new_max_bytes=113391538)
+0010.275 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.tmp: 200 files added (on-disk size: 35856.9 KB)
+0010.285 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 108.1 MB added on this batch (108.1 MB, 458 files batched, 120 (249) added so far); re-opening (prior size: 35856.9 KB)
+0019.806 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.tmp: size is now: 143.10 MB
+0019.809 (0) A useful amount of data was added after this amount of zip processing: 10.5 s (normalised: 10.5 s, rate: 10505.3 KB/s)
+0019.819 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.tmp: 300 files added (on-disk size: 146583.7 KB)
+0019.832 (0) Zip: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.tmp: 400 files added (on-disk size: 146583.7 KB)
+0028.035 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.tmp: size is now: 196.70 MB
+0028.040 (0) Creating zip file manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.list-temp.tmp)
+0028.042 (0) Successfully created zip file manifest (size: 28645)
+0030.624 (0) Created uploads zip (0) - 201459.9 KB in 21.8 s (9258.9 KB/s) (sha1: 6642cf6d37741263f7904732d541b75027f9e661, sha256: a1b09b6177524d26d3163b4b8b4c2cbf2bf815cc383126855de31da6c53cc388)
+0030.628 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0030.629 (0) No remote despatch: user chose no remote backup service
+0030.629 (0) Recording as successfully uploaded: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip
+0030.631 (0) Deleting zip manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip.list.tmp)
+0030.632 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0030.633 (0) Number of backup sets in history: 0; groups (db): 1
+0030.633 (0) Number of backup sets in history: 0; groups (files): 1
+0030.634 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0030.637 (0) Beginning backup of other directories found in the content directory (index: 0)
+0030.638 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0030.638 (0) Looking for candidates to backup in: /home/u877180305/domains/powerdatainc.com/public_html/wp-content
+0030.639 (0) finding files: upgrade: skipping: excluded by options
+0030.639 (0) finding files: index.php: adding to list (1)
+0030.640 (0) finding files: updraft: skipping: this is the updraft directory
+0030.640 (0) finding files: ai1wm-backups: skipping: excluded by options (glob)
+0030.640 (0) finding files: plugins: skipping: this is the plugins directory
+0030.641 (0) finding files: uploads: skipping: this is the uploads directory
+0030.641 (0) finding files: themes: skipping: this is the themes directory
+0030.643 (0) Total entities for the zip file: 0 directories, 1 files (0 skipped as non-modified), 0 MB
+0030.656 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-others.zip.tmp: size is now: 0.00 MB
+0030.658 (0) Creating zip file manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-others.zip.list-temp.tmp)
+0030.658 (0) Successfully created zip file manifest (size: 43)
+0030.661 (0) Created others zip (0) - 0.2 KB in 0 s (10.2 KB/s) (sha1: bc7150a0a61b966e044992eed1fd3cd28ab9fe85, sha256: e5b4d3d414fee083e2af177d8a4a433803374fd219c86f58fd4843ea65f787ff)
+0030.664 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0030.664 (0) No remote despatch: user chose no remote backup service
+0030.664 (0) Recording as successfully uploaded: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-others.zip
+0030.665 (0) Deleting zip manifest (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-others.zip.list.tmp)
+0030.667 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0030.667 (0) Number of backup sets in history: 0; groups (db): 1
+0030.668 (0) Number of backup sets in history: 0; groups (files): 1
+0030.668 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0030.672 (0) Saving backup status to database (elements: 8)
+0030.674 (0) Beginning creation of database dump (WordPress DB)
+0030.674 (0) SQL compatibility mode is: NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+0030.675 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0030.708 (0) Output: /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wphq_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!40101 SET character_set_client = utf8 */;\nC (truncated - 1458 bytes total)
+0030.709 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0030.721 (0) Table wphq_options: Total expected rows (via COUNT): 433
+0030.722 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.816 (0) Table wphq_options: Rows added in this batch (next record: 426737): 429 (uncompressed bytes in this segment=2035208) in 0.10 seconds
+0030.820 (0) Table wphq_options: finishing file(s) (2, 404.9 KB)
+0030.823 (0) Table wphq_users: Total expected rows (via COUNT): 2
+0030.824 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.825 (0) Table wphq_users: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=1381) in 0.00 seconds
+0030.828 (0) Table wphq_users: finishing file(s) (2, 0.7 KB)
+0030.831 (0) Table wphq_usermeta: Total expected rows (via COUNT): 108
+0030.832 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.834 (0) Table wphq_usermeta: Rows added in this batch (next record: 147): 108 (uncompressed bytes in this segment=6651) in 0.00 seconds
+0030.837 (0) Table wphq_usermeta: finishing file(s) (2, 2.2 KB)
+0030.841 (0) Table wphq_actionscheduler_actions: Total expected rows (via COUNT): 55
+0030.842 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.844 (0) Table wphq_actionscheduler_actions: Rows added in this batch (next record: 7599): 55 (uncompressed bytes in this segment=22569) in 0.01 seconds
+0030.847 (0) Table wphq_actionscheduler_actions: finishing file(s) (2, 3 KB)
+0030.849 (0) Table wphq_actionscheduler_claims: Total expected rows (via COUNT): 0
+0030.850 (0) Table wphq_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=645) in 0.00 seconds
+0030.854 (0) Table wphq_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0030.857 (0) Table wphq_actionscheduler_groups: Total expected rows (via COUNT): 3
+0030.857 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.859 (0) Table wphq_actionscheduler_groups: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=704) in 0.00 seconds
+0030.862 (0) Table wphq_actionscheduler_groups: finishing file(s) (2, 0.4 KB)
+0030.864 (0) Table wphq_actionscheduler_logs: Total expected rows (via COUNT): 151
+0030.865 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.868 (0) Table wphq_actionscheduler_logs: Rows added in this batch (next record: 20939): 151 (uncompressed bytes in this segment=14498) in 0.00 seconds
+0030.870 (0) Table wphq_actionscheduler_logs: finishing file(s) (2, 2 KB)
+0030.873 (0) Table wphq_commentmeta: Total expected rows (via COUNT): 0
+0030.874 (0) Table wphq_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=660) in 0.00 seconds
+0030.877 (0) Table wphq_commentmeta: finishing file(s) (2, 0.4 KB)
+0030.879 (0) Table wphq_comments: Total expected rows (via COUNT): 0
+0030.880 (0) Table wphq_comments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1475) in 0.00 seconds
+0030.882 (0) Table wphq_comments: finishing file(s) (2, 0.5 KB)
+0030.884 (0) Table wphq_links: Total expected rows (via COUNT): 0
+0030.885 (0) Table wphq_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1035) in 0.00 seconds
+0030.886 (0) Table wphq_links: finishing file(s) (2, 0.5 KB)
+0030.893 (0) Table wphq_postmeta: Total expected rows (approximate): 1270
+0030.982 (0) Table wphq_postmeta: Rows added in this batch (next record: 3439): 1270 (uncompressed bytes in this segment=4030130) in 0.09 seconds
+0030.988 (0) Table wphq_postmeta: finishing file(s) (2, 381.9 KB)
+0030.999 (0) Table wphq_posts: Total expected rows (via COUNT): 595
+0031.093 (0) Table wphq_posts: Rows added in this batch (next record: 1448): 595 (uncompressed bytes in this segment=4204623) in 0.10 seconds
+0031.098 (0) Table wphq_posts: finishing file(s) (2, 184 KB)
+0031.102 (0) Table wphq_term_relationships: Total expected rows (approximate): 51
+0031.105 (0) Table wphq_term_relationships: Rows added in this batch (next record: 100000): 51 (uncompressed bytes in this segment=1453) in 0.00 seconds
+0031.110 (0) Table wphq_term_relationships: finishing file(s) (2, 0.6 KB)
+0031.115 (0) Table wphq_term_taxonomy: Total expected rows (via COUNT): 49
+0031.116 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.118 (0) Table wphq_term_taxonomy: Rows added in this batch (next record: 52): 49 (uncompressed bytes in this segment=5176) in 0.01 seconds
+0031.123 (0) Table wphq_term_taxonomy: finishing file(s) (2, 1.6 KB)
+0031.127 (0) Table wphq_termmeta: Total expected rows (via COUNT): 211
+0031.127 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.130 (0) Table wphq_termmeta: Rows added in this batch (next record: 233): 211 (uncompressed bytes in this segment=10613) in 0.01 seconds
+0031.134 (0) Table wphq_termmeta: finishing file(s) (2, 2.2 KB)
+0031.136 (0) Table wphq_terms: Total expected rows (via COUNT): 49
+0031.137 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.138 (0) Table wphq_terms: Rows added in this batch (next record: 52): 49 (uncompressed bytes in this segment=2824) in 0.00 seconds
+0031.141 (0) Table wphq_terms: finishing file(s) (2, 1 KB)
+0031.142 (0) Skipping table (lacks our prefix (wphq_)): wp_actionscheduler_actions
+0031.142 (0) Skipping table (lacks our prefix (wphq_)): wp_actionscheduler_claims
+0031.142 (0) Skipping table (lacks our prefix (wphq_)): wp_actionscheduler_groups
+0031.143 (0) Skipping table (lacks our prefix (wphq_)): wp_actionscheduler_logs
+0031.143 (0) Skipping table (lacks our prefix (wphq_)): wp_commentmeta
+0031.144 (0) Skipping table (lacks our prefix (wphq_)): wp_comments
+0031.144 (0) Skipping table (lacks our prefix (wphq_)): wp_frm_fields
+0031.144 (0) Skipping table (lacks our prefix (wphq_)): wp_frm_forms
+0031.145 (0) Skipping table (lacks our prefix (wphq_)): wp_frm_item_metas
+0031.145 (0) Skipping table (lacks our prefix (wphq_)): wp_frm_items
+0031.145 (0) Skipping table (lacks our prefix (wphq_)): wp_links
+0031.146 (0) Skipping table (lacks our prefix (wphq_)): wp_litespeed_url
+0031.146 (0) Skipping table (lacks our prefix (wphq_)): wp_litespeed_url_file
+0031.147 (0) Skipping table (lacks our prefix (wphq_)): wp_options
+0031.147 (0) Skipping table (lacks our prefix (wphq_)): wp_postmeta
+0031.147 (0) Skipping table (lacks our prefix (wphq_)): wp_posts
+0031.148 (0) Skipping table (lacks our prefix (wphq_)): wp_term_relationships
+0031.148 (0) Skipping table (lacks our prefix (wphq_)): wp_term_taxonomy
+0031.148 (0) Skipping table (lacks our prefix (wphq_)): wp_termmeta
+0031.149 (0) Skipping table (lacks our prefix (wphq_)): wp_terms
+0031.149 (0) Skipping table (lacks our prefix (wphq_)): wp_usermeta
+0031.149 (0) Skipping table (lacks our prefix (wphq_)): wp_users
+0031.150 (0) Skipping table (lacks our prefix (wphq_)): wp_wpforms_tasks_meta
+0031.152 (0) Table wphq_brizy_logs: Total expected rows (via COUNT): 0
+0031.153 (0) Table wphq_brizy_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=549) in 0.00 seconds
+0031.155 (0) Table wphq_brizy_logs: finishing file(s) (2, 0.3 KB)
+0031.160 (0) Table wphq_frm_fields: Total expected rows (via COUNT): 4
+0031.160 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.165 (0) Table wphq_frm_fields: Rows added in this batch (next record: 6): 4 (uncompressed bytes in this segment=4995) in 0.01 seconds
+0031.169 (0) Table wphq_frm_fields: finishing file(s) (2, 1.2 KB)
+0031.175 (0) Table wphq_frm_forms: Total expected rows (via COUNT): 1
+0031.176 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.177 (0) Table wphq_frm_forms: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=2363) in 0.01 seconds
+0031.182 (0) Table wphq_frm_forms: finishing file(s) (2, 1.1 KB)
+0031.186 (0) Table wphq_frm_item_metas: Total expected rows (via COUNT): 0
+0031.187 (0) Table wphq_frm_item_metas: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=640) in 0.00 seconds
+0031.190 (0) Table wphq_frm_item_metas: finishing file(s) (2, 0.4 KB)
+0031.194 (0) Table wphq_frm_items: Total expected rows (via COUNT): 0
+0031.195 (0) Table wphq_frm_items: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1011) in 0.00 seconds
+0031.197 (0) Table wphq_frm_items: finishing file(s) (2, 0.5 KB)
+0031.200 (0) Table wphq_litespeed_url: Total expected rows (via COUNT): 0
+0031.201 (0) Table wphq_litespeed_url: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=589) in 0.00 seconds
+0031.204 (0) Table wphq_litespeed_url: finishing file(s) (2, 0.4 KB)
+0031.208 (0) Table wphq_litespeed_url_file: Total expected rows (via COUNT): 0
+0031.209 (0) Table wphq_litespeed_url_file: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1121) in 0.00 seconds
+0031.212 (0) Table wphq_litespeed_url_file: finishing file(s) (2, 0.5 KB)
+0031.215 (0) Table wphq_rank_math_404_logs: Total expected rows (via COUNT): 91
+0031.215 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.218 (0) Table wphq_rank_math_404_logs: Rows added in this batch (next record: 91): 91 (uncompressed bytes in this segment=9111) in 0.00 seconds
+0031.221 (0) Table wphq_rank_math_404_logs: finishing file(s) (2, 2.1 KB)
+0031.223 (0) Table wphq_rank_math_analytics_gsc: Total expected rows (via COUNT): 2
+0031.224 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.225 (0) Table wphq_rank_math_analytics_gsc: Rows added in this batch (next record: 7): 2 (uncompressed bytes in this segment=1125) in 0.00 seconds
+0031.228 (0) Table wphq_rank_math_analytics_gsc: finishing file(s) (2, 0.5 KB)
+0031.232 (0) Table wphq_rank_math_analytics_inspections: Total expected rows (via COUNT): 21
+0031.232 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.234 (0) Table wphq_rank_math_analytics_inspections: Rows added in this batch (next record: 21): 21 (uncompressed bytes in this segment=7230) in 0.00 seconds
+0031.237 (0) Table wphq_rank_math_analytics_inspections: finishing file(s) (2, 1.3 KB)
+0031.240 (0) Table wphq_rank_math_analytics_objects: Total expected rows (via COUNT): 21
+0031.240 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.242 (0) Table wphq_rank_math_analytics_objects: Rows added in this batch (next record: 21): 21 (uncompressed bytes in this segment=5419) in 0.00 seconds
+0031.244 (0) Table wphq_rank_math_analytics_objects: finishing file(s) (2, 1.7 KB)
+0031.247 (0) Table wphq_rank_math_internal_links: Total expected rows (via COUNT): 75
+0031.248 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.250 (0) Table wphq_rank_math_internal_links: Rows added in this batch (next record: 1065): 75 (uncompressed bytes in this segment=7734) in 0.00 seconds
+0031.252 (0) Table wphq_rank_math_internal_links: finishing file(s) (2, 1.6 KB)
+0031.255 (0) Table wphq_rank_math_internal_meta: Total expected rows (via COUNT): 44
+0031.255 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.257 (0) Table wphq_rank_math_internal_meta: Rows added in this batch (next record: 1439): 44 (uncompressed bytes in this segment=1469) in 0.00 seconds
+0031.259 (0) Table wphq_rank_math_internal_meta: finishing file(s) (2, 0.6 KB)
+0031.262 (0) Table wphq_rank_math_redirections: Total expected rows (via COUNT): 0
+0031.263 (0) Table wphq_rank_math_redirections: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=951) in 0.00 seconds
+0031.265 (0) Table wphq_rank_math_redirections: finishing file(s) (2, 0.5 KB)
+0031.268 (0) Table wphq_rank_math_redirections_cache: Total expected rows (via COUNT): 0
+0031.269 (0) Table wphq_rank_math_redirections_cache: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=848) in 0.00 seconds
+0031.271 (0) Table wphq_rank_math_redirections_cache: finishing file(s) (2, 0.4 KB)
+0031.273 (0) Table wphq_wpforms_lite: Total expected rows (via COUNT): 0
+0031.274 (0) Table wphq_wpforms_lite: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=553) in 0.00 seconds
+0031.276 (0) Table wphq_wpforms_lite: finishing file(s) (2, 0.3 KB)
+0031.281 (0) Table wphq_wpforms_tasks_meta: Total expected rows (via COUNT): 4
+0031.281 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.283 (0) Table wphq_wpforms_tasks_meta: Rows added in this batch (next record: 58): 4 (uncompressed bytes in this segment=927) in 0.01 seconds
+0031.288 (0) Table wphq_wpforms_tasks_meta: finishing file(s) (2, 0.5 KB)
+0031.288 (0) PHP event: code E_WARNING: filemtime(): stat failed for /home/u877180305/domains/powerdatainc.com/public_html/wp-content/updraft/backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db.gz (line 1922, wp-content/plugins/updraftplus/backup.php)
+0031.290 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_options.table.tmpr426738.gz (1/56/fopen): adding to final database dump
+0031.295 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_options.table.gz (2/56/fopen): adding to final database dump
+0031.296 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_users.table.tmpr3.gz (3/56/fopen): adding to final database dump
+0031.296 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_users.table.gz (4/56/fopen): adding to final database dump
+0031.297 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_usermeta.table.tmpr148.gz (5/56/fopen): adding to final database dump
+0031.297 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_usermeta.table.gz (6/56/fopen): adding to final database dump
+0031.298 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_actions.table.tmpr7600.gz (7/56/fopen): adding to final database dump
+0031.298 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_actions.table.gz (8/56/fopen): adding to final database dump
+0031.299 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_claims.table.tmpr0.gz (9/56/fopen): adding to final database dump
+0031.299 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_claims.table.gz (10/56/fopen): adding to final database dump
+0031.300 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_groups.table.tmpr4.gz (11/56/fopen): adding to final database dump
+0031.300 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_groups.table.gz (12/56/fopen): adding to final database dump
+0031.301 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_logs.table.tmpr20940.gz (13/56/fopen): adding to final database dump
+0031.301 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_actionscheduler_logs.table.gz (14/56/fopen): adding to final database dump
+0031.301 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_commentmeta.table.tmpr0.gz (15/56/fopen): adding to final database dump
+0031.302 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_commentmeta.table.gz (16/56/fopen): adding to final database dump
+0031.302 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_comments.table.tmpr0.gz (17/56/fopen): adding to final database dump
+0031.303 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_comments.table.gz (18/56/fopen): adding to final database dump
+0031.303 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_links.table.tmpr0.gz (19/56/fopen): adding to final database dump
+0031.304 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_links.table.gz (20/56/fopen): adding to final database dump
+0031.304 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_postmeta.table.tmpr3440.gz (21/56/fopen): adding to final database dump
+0031.309 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_postmeta.table.gz (22/56/fopen): adding to final database dump
+0031.309 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_posts.table.tmpr1449.gz (23/56/fopen): adding to final database dump
+0031.311 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_posts.table.gz (24/56/fopen): adding to final database dump
+0031.312 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_term_relationships.table.tmpr100001.gz (25/56/fopen): adding to final database dump
+0031.312 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_term_relationships.table.gz (26/56/fopen): adding to final database dump
+0031.313 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_term_taxonomy.table.tmpr53.gz (27/56/fopen): adding to final database dump
+0031.313 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_term_taxonomy.table.gz (28/56/fopen): adding to final database dump
+0031.314 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_termmeta.table.tmpr234.gz (29/56/fopen): adding to final database dump
+0031.314 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_termmeta.table.gz (30/56/fopen): adding to final database dump
+0031.314 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_terms.table.tmpr53.gz (31/56/fopen): adding to final database dump
+0031.315 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_terms.table.gz (32/56/fopen): adding to final database dump
+0031.315 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_brizy_logs.table.tmpr0.gz (33/56/fopen): adding to final database dump
+0031.315 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_brizy_logs.table.gz (34/56/fopen): adding to final database dump
+0031.316 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_fields.table.tmpr7.gz (35/56/fopen): adding to final database dump
+0031.316 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_fields.table.gz (36/56/fopen): adding to final database dump
+0031.316 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_forms.table.tmpr2.gz (37/56/fopen): adding to final database dump
+0031.317 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_forms.table.gz (38/56/fopen): adding to final database dump
+0031.317 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_item_metas.table.tmpr0.gz (39/56/fopen): adding to final database dump
+0031.317 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_item_metas.table.gz (40/56/fopen): adding to final database dump
+0031.318 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_items.table.tmpr0.gz (41/56/fopen): adding to final database dump
+0031.318 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_frm_items.table.gz (42/56/fopen): adding to final database dump
+0031.319 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_litespeed_url.table.tmpr0.gz (43/56/fopen): adding to final database dump
+0031.319 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_litespeed_url.table.gz (44/56/fopen): adding to final database dump
+0031.320 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_litespeed_url_file.table.tmpr0.gz (45/56/fopen): adding to final database dump
+0031.320 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_litespeed_url_file.table.gz (46/56/fopen): adding to final database dump
+0031.320 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_404_logs.table.tmpr92.gz (47/56/fopen): adding to final database dump
+0031.321 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_404_logs.table.gz (48/56/fopen): adding to final database dump
+0031.321 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_analytics_gsc.table.tmpr8.gz (49/56/fopen): adding to final database dump
+0031.322 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_analytics_gsc.table.gz (50/56/fopen): adding to final database dump
+0031.322 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_analytics_inspections.table.tmpr22.gz (51/56/fopen): adding to final database dump
+0031.323 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_analytics_inspections.table.gz (52/56/fopen): adding to final database dump
+0031.323 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_analytics_objects.table.tmpr22.gz (53/56/fopen): adding to final database dump
+0031.324 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_analytics_objects.table.gz (54/56/fopen): adding to final database dump
+0031.324 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_internal_links.table.tmpr1066.gz (55/56/fopen): adding to final database dump
+0031.324 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_internal_links.table.gz (56/56/fopen): adding to final database dump
+0031.325 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_internal_meta.table.tmpr1440.gz (57/56/fopen): adding to final database dump
+0031.325 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_internal_meta.table.gz (58/56/fopen): adding to final database dump
+0031.325 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_redirections.table.tmpr0.gz (59/56/fopen): adding to final database dump
+0031.326 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_redirections.table.gz (60/56/fopen): adding to final database dump
+0031.326 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_redirections_cache.table.tmpr0.gz (61/56/fopen): adding to final database dump
+0031.327 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_rank_math_redirections_cache.table.gz (62/56/fopen): adding to final database dump
+0031.327 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_wpforms_lite.table.tmpr0.gz (63/56/fopen): adding to final database dump
+0031.327 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_wpforms_lite.table.gz (64/56/fopen): adding to final database dump
+0031.328 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_wpforms_tasks_meta.table.tmpr59.gz (65/56/fopen): adding to final database dump
+0031.328 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db-table-wphq_wpforms_tasks_meta.table.gz (66/56/fopen): adding to final database dump
+0031.331 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db.gz: finished writing out complete database file (1000 KB)
+0031.348 (0) Total database tables backed up: 33 (backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db.gz, size: 1024144, sha1: 89678b3625c44e4cec3a80d70e5cfe56f975faf2, sha256: dda1822bc8a0beb158cc417ee994d129fc9359fa4faf4c63d61c16fb34a05261)
+0031.352 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-plugins.zip: plugins: This file has already been successfully uploaded
+0031.353 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-themes.zip: themes: This file has already been successfully uploaded
+0031.353 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-uploads.zip: uploads: This file has already been successfully uploaded
+0031.354 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-others.zip: others: This file has already been successfully uploaded
+0031.354 (0) backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db.gz: db: This file has not yet been successfully uploaded: will queue
+0031.355 (0) Saving backup history. Total backup size: 237.3 MB
+0031.357 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0031.360 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0031.360 (0) No remote despatch: user chose no remote backup service
+0031.361 (0) Recording as successfully uploaded: backup_2022-12-11-1134_PowerData_Inc_b163a8bde6cb-db.gz
+0031.364 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0031.365 (0) Number of backup sets in history: 1; groups (db): 1
+0031.366 (0) Examining (for databases) backup set with group_id=0, nonce=b163a8bde6cb, datestamp=1670780069 (Dec 11 2022 17:34:29)
+0031.366 (0) This backup set is the backup set just made, so will not be deleted.
+0031.366 (0) Number of backup sets in history: 1; groups (files): 1
+0031.366 (0) Examining (for files) backup set with nonce=b163a8bde6cb, datestamp=1670780069 (Dec 11 2022 17:34:29)
+0031.366 (0) This backup set is the backup set just made, so will not be deleted.
+0031.367 (0) This backup set is the backup set just made, so will not be deleted.
+0031.367 (0) This backup set is the backup set just made, so will not be deleted.
+0031.367 (0) This backup set is the backup set just made, so will not be deleted.
+0031.367 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0031.367 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0031.369 (0) Resume backup (b163a8bde6cb, 0): finish run
+0031.370 (0) Decremented the semaphore (fd) by 1
+0031.371 (0) Semaphore (fd) unlocked
+0031.372 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0031.374 (0) No email will/can be sent - the user has not configured an email address.
+0031.374 (0) The backup apparently succeeded and is now complete
