@@ -18,3 +18,9 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
+
+# Video clips
+*.mp4
+
+# Backup zip files
+backup_*.zip
