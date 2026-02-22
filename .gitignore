@@ -19,8 +19,8 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Video clips
-*.mp4
-
-# Backup zip files
+# Backup, video clips and zip files
 backup_*.zip
+public_html/wp-content/updraft/
+*.zip
+*.mp4
