@@ -1,0 +1,20 @@
+# WordPress core directories (optional if you want to track them)
+wp-admin/
+wp-includes/
+
+# Uploads
+public_html/wp-content/uploads/
+
+# Cache
+public_html/wp-content/cache/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
