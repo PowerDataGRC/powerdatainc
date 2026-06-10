@@ -19,6 +19,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# WordPress config (managed per-environment, never commit production credentials)
+public_html/wp-config.php
+
 # Backup, video clips and zip files
 backup_*.zip
 public_html/wp-content/updraft/

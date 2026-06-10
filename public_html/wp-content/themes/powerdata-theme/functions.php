@@ -52,6 +52,12 @@ function powerdata_genesis_setup() {
 
 	// Remove sidebar from all pages by default
 	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+	// Move primary nav inside the header so logo and links share one bar.
+	// Must run here (genesis_setup priority 15), AFTER Genesis has registered
+	// genesis_do_nav on genesis_after_header during genesis_init.
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_header', 'genesis_do_nav', 12 );
 }
 
 // ── 3. ENQUEUE STYLES & SCRIPTS ──────────────────────────────────────────────
@@ -432,10 +438,6 @@ function powerdata_dequeue_siteorigin() {
 }
 
 // ── 11. GENESIS HEADER / NAV TWEAKS ──────────────────────────────────────────
-// Move primary nav inside the header so logo and links share one bar
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
-
 // Keep the default Genesis header but remove the tagline
 add_filter( 'genesis_seo_title', 'powerdata_custom_title_html', 10, 3 );
 function powerdata_custom_title_html( $title, $inside, $wrap ) {
