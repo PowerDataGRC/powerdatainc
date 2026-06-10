@@ -150,6 +150,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+/* Nav menu list — horizontal flex row, no bullets */
+.nav-primary .genesis-nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+}
+.nav-primary .genesis-nav-menu > li { list-style: none; }
+
 /* Nav links */
 .nav-primary .genesis-nav-menu a {
   font-weight: 500;
@@ -384,6 +395,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
   padding: 18px;
+  position: relative;
 }
 .pd-mock-head {
   display: flex;
@@ -435,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pd-float-badge {
   position: absolute;
-  left: -16px; bottom: 38px;
+  left: -14px; bottom: -20px;
   background: var(--ink);
   color: #fff;
   border-radius: 12px;

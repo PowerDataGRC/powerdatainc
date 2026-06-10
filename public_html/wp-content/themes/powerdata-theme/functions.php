@@ -58,7 +58,17 @@ function powerdata_genesis_setup() {
 	// genesis_do_nav on genesis_after_header during genesis_init.
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
 	add_action( 'genesis_header', 'genesis_do_nav', 12 );
+
+	// Only register primary nav — disables the secondary nav menu and prevents
+	// any old secondary/social menu widgets from rendering below the header.
+	add_theme_support( 'genesis-menus', [ 'primary' => __( 'Primary Navigation', 'powerdata-theme' ) ] );
 }
+
+// Deregister the Genesis header-right sidebar so old social-link widgets
+// from a previous theme don't appear in the header area.
+add_action( 'widgets_init', function () {
+	unregister_sidebar( 'header-right' );
+}, 20 );
 
 // ── 3. ENQUEUE STYLES & SCRIPTS ──────────────────────────────────────────────
 add_action( 'wp_enqueue_scripts', 'powerdata_enqueue_assets' );
@@ -523,3 +533,42 @@ add_editor_style( 'assets/editor-style.css' );
 
 // Remove inline block CSS that conflicts with our design system
 add_filter( 'should_load_separate_core_block_assets', '__return_false' );
+
+// ── 14. HIDE PAGE TITLE OPTION ────────────────────────────────────────────────
+add_action( 'add_meta_boxes', 'powerdata_add_page_options_box' );
+function powerdata_add_page_options_box() {
+	add_meta_box(
+		'powerdata-page-options',
+		'Page Options',
+		'powerdata_page_options_html',
+		[ 'page', 'post' ],
+		'side',
+		'default'
+	);
+}
+
+function powerdata_page_options_html( $post ) {
+	wp_nonce_field( 'powerdata_page_options', 'powerdata_page_options_nonce' );
+	$hide = get_post_meta( $post->ID, '_pd_hide_title', true );
+	echo '<label style="display:flex;align-items:center;gap:8px;font-size:13px;">';
+	echo '<input type="checkbox" name="pd_hide_title" value="1" ' . checked( $hide, '1', false ) . '>';
+	echo 'Hide page title</label>';
+}
+
+add_action( 'save_post', 'powerdata_save_page_options' );
+function powerdata_save_page_options( $post_id ) {
+	if ( ! isset( $_POST['powerdata_page_options_nonce'] ) ) return;
+	if ( ! wp_verify_nonce( $_POST['powerdata_page_options_nonce'], 'powerdata_page_options' ) ) return;
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+	if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+
+	update_post_meta( $post_id, '_pd_hide_title', isset( $_POST['pd_hide_title'] ) ? '1' : '' );
+}
+
+add_filter( 'genesis_post_title_output', 'powerdata_maybe_hide_title' );
+function powerdata_maybe_hide_title( $title ) {
+	if ( get_post_meta( get_the_ID(), '_pd_hide_title', true ) ) {
+		return '';
+	}
+	return $title;
+}

@@ -22,6 +22,16 @@ jobs:
         chmod 600 ~/.ssh/deploy_key
         ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
 
+    - name: Ensure remote directories exist
+      env:
+        SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+      run: |
+        ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
+          "$SSH_USER@$SSH_HOST" \
+          "mkdir -p ~/public_html/wp-content/themes/powerdata-theme ~/public_html/portal"
+
     - name: Sync theme
       env:
         SSH_USER: ${{ secrets.HOSTINGER_USER }}
