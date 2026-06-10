@@ -7,7 +7,7 @@
  */
 
 // ── 1. CONSTANTS ─────────────────────────────────────────────────────────────
-define( 'POWERDATA_VERSION',   '1.0.2' );
+define( 'POWERDATA_VERSION',   '1.0.4' );
 define( 'POWERDATA_DIR',       get_stylesheet_directory() );
 define( 'POWERDATA_URI',       get_stylesheet_directory_uri() );
 define( 'POWERDATA_SITE_NAME', 'PowerData Solutions Inc.' );
@@ -279,6 +279,20 @@ function powerdata_handle_enroll_form() {
 	} else {
 		wp_send_json_error( [ 'message' => 'Sorry, there was a problem. Please email us directly.' ] );
 	}
+}
+
+// ── 5b. OUTBOUND SMTP ────────────────────────────────────────────────────────
+// Password is stored in wp-config.php as: define( 'SMTP_PASSWORD', '...' );
+// wp-config.php is git-ignored so the credential never enters the repo.
+add_action( 'phpmailer_init', 'powerdata_smtp_config' );
+function powerdata_smtp_config( $phpmailer ) {
+	$phpmailer->isSMTP();
+	$phpmailer->Host       = 'smtp.titan.email';
+	$phpmailer->SMTPAuth   = true;
+	$phpmailer->Port       = 465;
+	$phpmailer->SMTPSecure = 'ssl';
+	$phpmailer->Username   = 'letstalk@powerdatainc.com';
+	$phpmailer->Password   = defined( 'SMTP_PASSWORD' ) ? SMTP_PASSWORD : '';
 }
 
 // ── 6. LOCALIZE AJAX DATA FOR JS ─────────────────────────────────────────────
