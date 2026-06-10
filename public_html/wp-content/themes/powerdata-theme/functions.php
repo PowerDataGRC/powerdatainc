@@ -50,8 +50,10 @@ function powerdata_genesis_setup() {
 	// Remove the Altitude Pro / Genesis default breadcrumbs
 	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
-	// Remove sidebar from all pages by default
-	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+	// Force full-width layout site-wide. Using genesis_site_layout (not
+	// genesis_pre_get_option_site_layout) so it overrides any per-page
+	// _genesis_layout post meta that may have been saved by a previous theme.
+	add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
 	// Move primary nav inside the header so logo and links share one bar.
 	// Must run here (genesis_setup priority 15), AFTER Genesis has registered
