@@ -1,0 +1,50 @@
+/*
+ * PowerData Theme — editor-style.css
+ * Loaded in the block editor so the visual preview
+ * matches the front-end design system.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --ink:            #0F1B2D;
+  --ink-soft:       #46566E;
+  --muted:          #6B7889;
+  --paper:          #FAF8F4;
+  --surface:        #FFFFFF;
+  --surface-2:      #F4F1EA;
+  --line:           #E7E2D9;
+  --line-strong:    #D9D3C7;
+  --accent:         #0E7A5A;
+  --accent-deep:    #0A5C43;
+  --accent-bright:  #16A276;
+  --accent-soft:    #E5F2EC;
+  --amber:          #B5781A;
+  --amber-soft:     #F6ECD7;
+  --font-display:   'Schibsted Grotesk', system-ui, sans-serif;
+  --font-body:      'Hanken Grotesk', system-ui, sans-serif;
+  --font-serif:     'Instrument Serif', Georgia, serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+p { color: var(--ink-soft); }
+
+/* Editor content width */
+.editor-styles-wrapper .wp-block {
+  max-width: 1180px;
+}
