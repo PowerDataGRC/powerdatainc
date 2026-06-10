@@ -5,7 +5,7 @@ Description:       PowerData Solutions Genesis child theme. Replaces Altitude Pr
 Author:            PowerData Solutions Inc.
 Author URI:        https://powerdatainc.com
 Template:          genesis
-Version:           1.0.1
+Version:           1.0.2
 Tags:              genesis, essential-blocks, gutenberg, small-business
 License:           Private
 Text Domain:       powerdata-theme
@@ -101,16 +101,22 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================================
    5. GENESIS OVERRIDES
    ============================================================ */
-.site-inner,
-.wrap { max-width: var(--maxw); padding-left: var(--pad); padding-right: var(--pad); }
 
-/* Remove Genesis default sidebars for full-width pages */
-.content-sidebar-wrap { display: block; }
-.sidebar-primary       { display: none; }
-.content               { width: 100%; float: none; }
+/* Header's inner wrap stays centered and padded */
+.site-header .wrap {
+  max-width: var(--maxw);
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* Full-width layout */
-.full-width-content .content { width: 100%; }
+/* Content pipeline: no max-width so sections can fill the full viewport */
+.site-inner { max-width: none !important; padding: 0 !important; }
+.site-inner > .wrap { max-width: none !important; padding: 0 !important; margin: 0 !important; }
+.content-sidebar-wrap { display: block !important; max-width: none !important; padding: 0 !important; }
+.sidebar-primary { display: none !important; }
+.content { width: 100% !important; float: none !important; max-width: none !important; padding: 0 !important; }
 
 /* ============================================================
    6. NAVIGATION
@@ -447,7 +453,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pd-float-badge {
   position: absolute;
-  left: -14px; bottom: -20px;
+  left: 950px; bottom: 350px;
   background: var(--ink);
   color: #fff;
   border-radius: 12px;
