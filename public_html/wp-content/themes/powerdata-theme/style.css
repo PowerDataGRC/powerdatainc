@@ -5,7 +5,7 @@ Description:       PowerData Solutions Genesis child theme. Replaces Altitude Pr
 Author:            PowerData Solutions Inc.
 Author URI:        https://powerdatainc.com
 Template:          genesis
-Version:           1.0.4
+Version:           1.0.5
 Tags:              genesis, essential-blocks, gutenberg, small-business
 License:           Private
 Text Domain:       powerdata-theme
@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 14px;
 }
 
-.site-header .nav-primary { margin-left: auto; }
+.site-header .nav-primary { margin-left: auto; display: none; }
 
 .nav-primary .wrap {
   display: flex;
@@ -369,13 +369,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .pd-hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 1fr;
   gap: clamp(32px,5vw,72px);
   align-items: center;
 }
-@media (max-width:880px) {
-  .pd-hero-grid { grid-template-columns: 1fr; }
-  .pd-hero-visual { order: -1; }
+.pd-hero-visual { order: -1; }
+@media (min-width: 881px) {
+  .pd-hero-grid { grid-template-columns: 1.05fr .95fr; }
+  .pd-hero-visual { order: 0; }
 }
 
 .pd-hero h1 { font-size: clamp(40px,6vw,76px); line-height: 1.16; }
@@ -459,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 12px;
   padding: 12px 15px;
   box-shadow: var(--shadow-lg);
-  display: flex;
+  display: none;
   align-items: center;
   gap: 11px;
 }
@@ -472,17 +473,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 .pd-float-badge small { display: block; color: #9AA7B8; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
 .pd-float-badge b     { font-family: var(--font-display); font-size: 15px; }
-@media (max-width:480px) { .pd-float-badge { display: none; } }
+@media (min-width: 481px) { .pd-float-badge { display: flex; } }
 
 /* ============================================================
    13. HOMEPAGE — PILLARS
    ============================================================ */
 .pd-pillars {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: 1fr;
   gap: 22px;
 }
-@media (max-width:900px) { .pd-pillars { grid-template-columns: 1fr; } }
+@media (min-width: 641px) { .pd-pillars { grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 901px) { .pd-pillars { grid-template-columns: repeat(3,1fr); } }
 
 .pd-pillar {
   display: flex;
@@ -528,14 +530,14 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .pd-feat {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: clamp(32px,5vw,72px);
   align-items: center;
 }
-.pd-feat.rev .pd-feat-media { order: 2; }
-@media (max-width:860px) {
-  .pd-feat, .pd-feat.rev { grid-template-columns: 1fr; }
-  .pd-feat.rev .pd-feat-media { order: 0; }
+.pd-feat.rev .pd-feat-media { order: 0; }
+@media (min-width: 861px) {
+  .pd-feat { grid-template-columns: 1fr 1fr; }
+  .pd-feat.rev .pd-feat-media { order: 2; }
 }
 
 /* ============================================================
@@ -543,11 +545,11 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .priam-letters {
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-top: 8px;
 }
-@media (max-width:640px) { .priam-letters { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 641px) { .priam-letters { grid-template-columns: repeat(5,1fr); } }
 
 .pl {
   background: rgba(255,255,255,.04);
@@ -564,10 +566,10 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .pd-stat-row {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-@media (max-width:760px) { .pd-stat-row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 761px) { .pd-stat-row { grid-template-columns: repeat(4,1fr); } }
 
 .pd-stat b    { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(34px,4vw,46px); letter-spacing: -.03em; line-height: 1; }
 .pd-stat span { display: block; margin-top: 9px; color: var(--ink-soft); font-size: 14.5px; }
@@ -607,6 +609,18 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle, rgba(22,162,118,.4), transparent 70%);
   right: -80px; bottom: -160px;
   filter: blur(20px);
+}
+
+/* Responsive override for inline-styled CTA grid */
+.pd-cta-band > div[style] {
+  grid-template-columns: 1fr !important;
+  gap: 32px !important;
+}
+@media (min-width: 861px) {
+  .pd-cta-band > div[style] {
+    grid-template-columns: 1.1fr .9fr !important;
+    gap: 48px !important;
+  }
 }
 
 /* ============================================================
@@ -653,10 +667,10 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .pd-svc-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: 1fr;
   gap: 22px;
 }
-@media (max-width:900px) { .pd-svc-grid { grid-template-columns: 1fr; } }
+@media (min-width: 901px) { .pd-svc-grid { grid-template-columns: repeat(3,1fr); } }
 
 .pd-svc {
   padding: 30px 28px;
@@ -678,10 +692,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .pd-proc {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
 }
-@media (max-width:860px) { .pd-proc { grid-template-columns: 1fr 1fr; gap: 28px; } }
+@media (min-width: 861px) { .pd-proc { grid-template-columns: repeat(4,1fr); gap: 0; } }
 
 .pd-pstep { padding-right: 28px; }
 .pd-pstep .n {
@@ -702,10 +716,10 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .pd-course-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 24px;
 }
-@media (max-width:760px) { .pd-course-grid { grid-template-columns: 1fr; } }
+@media (min-width: 761px) { .pd-course-grid { grid-template-columns: 1fr 1fr; } }
 
 .pd-xcourse           { display: flex; flex-direction: column; overflow: hidden; }
 .pd-xcourse .bar      { height: 7px; }
@@ -721,10 +735,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .pd-steps {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-@media (max-width:860px) { .pd-steps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 861px) { .pd-steps { grid-template-columns: repeat(4,1fr); } }
 
 .pd-step h4 { font-family: var(--font-display); font-size: 18px; margin: 14px 0 7px; }
 .pd-step .n {
@@ -779,21 +793,21 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .pd-enroll-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 14px;
 }
-@media (max-width:640px) { .pd-enroll-grid { grid-template-columns: 1fr; } }
+@media (min-width: 641px) { .pd-enroll-grid { grid-template-columns: 1fr 1fr; } }
 
 /* ============================================================
    24. PRIAM PAGE
    ============================================================ */
 .pd-letters {
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
 }
-@media (max-width:880px) { .pd-letters { grid-template-columns: 1fr 1fr; } }
-@media (max-width:480px) { .pd-letters { grid-template-columns: 1fr; } }
+@media (min-width: 481px) { .pd-letters { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 881px) { .pd-letters { grid-template-columns: repeat(5,1fr); } }
 
 .pd-letter { padding: 26px 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 .pd-letter .big { font-family: var(--font-display); font-weight: 800; font-size: 40px; color: var(--accent); line-height: 1; }
@@ -803,14 +817,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .pd-why-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: 1fr;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
-@media (max-width:760px) { .pd-why-grid { grid-template-columns: 1fr; } }
+@media (min-width: 761px) { .pd-why-grid { grid-template-columns: repeat(2,1fr); } }
 
 .pd-why-cell { background: #fff; padding: 30px 28px; }
 .pd-why-cell .k  { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 14px; }
@@ -870,10 +884,10 @@ h1, h2, h3, h4, h5, h6 {
    26. UTILITY GRIDS
    ============================================================ */
 .pd-grid     { display: grid; gap: 24px; }
-.pd-grid-2   { grid-template-columns: repeat(2,1fr); }
-.pd-grid-3   { grid-template-columns: repeat(3,1fr); }
-@media (max-width:900px) { .pd-grid-3 { grid-template-columns: 1fr 1fr; } }
-@media (max-width:640px) { .pd-grid-2, .pd-grid-3 { grid-template-columns: 1fr; } }
+.pd-grid-2   { grid-template-columns: 1fr; }
+.pd-grid-3   { grid-template-columns: 1fr; }
+@media (min-width: 641px) { .pd-grid-2 { grid-template-columns: repeat(2,1fr); } .pd-grid-3 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 901px) { .pd-grid-3 { grid-template-columns: repeat(3,1fr); } }
 
 /* ============================================================
    27. FOOTER
@@ -888,12 +902,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .pd-footer-top {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
-@media (max-width:760px) { .pd-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (min-width: 761px) { .pd-footer-top { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; } }
 
 .site-footer h5 {
   font-family: var(--font-body);
@@ -931,7 +945,7 @@ h1, h2, h3, h4, h5, h6 {
    29. MOBILE NAV TOGGLE
    ============================================================ */
 .pd-nav-toggle {
-  display: none;
+  display: inline-flex;
   margin-left: auto;
   align-items: center;
   gap: 8px;
@@ -942,7 +956,10 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   color: #fff;
 }
-@media (max-width:920px) { .pd-nav-toggle { display: inline-flex; } }
+@media (min-width: 921px) {
+  .pd-nav-toggle { display: none; }
+  .site-header .nav-primary { display: flex; }
+}
 
 #pd-mobile-menu {
   display: none;
@@ -960,3 +977,5 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 #pd-mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
+#pd-mobile-menu ul { list-style: none; padding: 0; margin: 0; }
+#pd-mobile-menu li { display: block; }

@@ -7,7 +7,7 @@
  */
 
 // ── 1. CONSTANTS ─────────────────────────────────────────────────────────────
-define( 'POWERDATA_VERSION',   '1.0.4' );
+define( 'POWERDATA_VERSION',   '1.0.5' );
 define( 'POWERDATA_DIR',       get_stylesheet_directory() );
 define( 'POWERDATA_URI',       get_stylesheet_directory_uri() );
 define( 'POWERDATA_SITE_NAME', 'PowerData Solutions Inc.' );
@@ -474,6 +474,31 @@ function powerdata_custom_title_html( $title, $inside, $wrap ) {
 	return '<' . $wrap . ' class="site-title"><a href="' . home_url( '/' ) . '" rel="home">' . $inside . '</a></' . $wrap . '>';
 }
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+
+// ── 11b. MOBILE NAVIGATION ────────────────────────────────────────────────
+add_action( 'genesis_header', 'powerdata_mobile_nav_toggle', 20 );
+function powerdata_mobile_nav_toggle() {
+    ?>
+    <button class="pd-nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="pd-mobile-menu" aria-label="Open navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+    </button>
+    <?php
+}
+
+add_action( 'genesis_after_header', 'powerdata_mobile_menu', 4 );
+function powerdata_mobile_menu() {
+    ?>
+    <nav id="pd-mobile-menu" aria-label="Mobile navigation">
+        <?php wp_nav_menu( [
+            'theme_location' => 'primary',
+            'container'      => false,
+        ] ); ?>
+        <a class="btn btn-primary" href="<?php echo esc_url( home_url( '/#contact' ) ); ?>" style="margin-top:16px;width:100%;justify-content:center;display:inline-flex;">Let's Talk →</a>
+    </nav>
+    <?php
+}
 
 // ── 12. REMOVE GENESIS FEATURES WE DON'T USE ────────────────────────────────
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );

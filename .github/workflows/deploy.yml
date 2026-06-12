@@ -30,7 +30,7 @@ jobs:
       run: |
         ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
           "$SSH_USER@$SSH_HOST" \
-          "mkdir -p ~/public_html/wp-content/themes/powerdata-theme ~/public_html/portal"
+          "mkdir -p ~/domains/powerdatainc.com/public_html/wp-content/themes/powerdata-theme ~/domains/powerdatainc.com/public_html/portal"
 
     - name: Sync theme
       env:
@@ -41,7 +41,7 @@ jobs:
         rsync -avz --delete --checksum \
           -e "ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
           public_html/wp-content/themes/powerdata-theme/ \
-          "$SSH_USER@$SSH_HOST:~/public_html/wp-content/themes/powerdata-theme/"
+          "$SSH_USER@$SSH_HOST:~/domains/powerdatainc.com/public_html/wp-content/themes/powerdata-theme/"
 
     - name: Verify theme version on server
       env:
@@ -51,7 +51,7 @@ jobs:
       run: |
         ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
           "$SSH_USER@$SSH_HOST" \
-          "grep -m1 'POWERDATA_VERSION' ~/public_html/wp-content/themes/powerdata-theme/functions.php && grep -m1 '^Version:' ~/public_html/wp-content/themes/powerdata-theme/style.css"
+          "grep -m1 'POWERDATA_VERSION' ~/domains/powerdatainc.com/public_html/wp-content/themes/powerdata-theme/functions.php && grep -m1 '^Version:' ~/domains/powerdatainc.com/public_html/wp-content/themes/powerdata-theme/style.css"
 
     - name: Sync portal
       env:
@@ -59,10 +59,10 @@ jobs:
         SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
         SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
       run: |
-        rsync -az --delete --checksum \
+        rsync -avz --delete --checksum \
           -e "ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
           public_html/portal/ \
-          "$SSH_USER@$SSH_HOST:~/public_html/portal/"
+          "$SSH_USER@$SSH_HOST:~/domains/powerdatainc.com/public_html/portal/"
 
     - name: Sync WordPress .htaccess
       env:
@@ -73,4 +73,4 @@ jobs:
         rsync -az \
           -e "ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
           public_html/.htaccess \
-          "$SSH_USER@$SSH_HOST:~/public_html/.htaccess"
+          "$SSH_USER@$SSH_HOST:~/domains/powerdatainc.com/public_html/.htaccess"
