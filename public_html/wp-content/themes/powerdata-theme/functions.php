@@ -7,7 +7,7 @@
  */
 
 // ── 1. CONSTANTS ─────────────────────────────────────────────────────────────
-define( 'POWERDATA_VERSION',   '1.0.7' );
+define( 'POWERDATA_VERSION',   '1.0.8' );
 define( 'POWERDATA_DIR',       get_stylesheet_directory() );
 define( 'POWERDATA_URI',       get_stylesheet_directory_uri() );
 define( 'POWERDATA_SITE_NAME', 'PowerData Solutions Inc.' );
@@ -476,7 +476,7 @@ function powerdata_custom_title_html( $title, $inside, $wrap ) {
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
 // ── 11b. MOBILE NAVIGATION ────────────────────────────────────────────────
-add_action( 'genesis_header', 'powerdata_mobile_nav_toggle', 20 );
+add_action( 'genesis_header', 'powerdata_mobile_nav_toggle', 13 );
 function powerdata_mobile_nav_toggle() {
     ?>
     <button class="pd-nav-toggle" data-menu-toggle aria-expanded="false" aria-controls="pd-mobile-menu" aria-label="Open navigation">
