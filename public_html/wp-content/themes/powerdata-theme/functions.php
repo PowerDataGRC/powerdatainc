@@ -7,11 +7,18 @@
  */
 
 // ── 1. CONSTANTS ─────────────────────────────────────────────────────────────
-define( 'POWERDATA_VERSION',   '1.0.8' );
+define( 'POWERDATA_VERSION',   '1.0.9' );
 define( 'POWERDATA_DIR',       get_stylesheet_directory() );
 define( 'POWERDATA_URI',       get_stylesheet_directory_uri() );
 define( 'POWERDATA_SITE_NAME', 'PowerData Solutions Inc.' );
 define( 'POWERDATA_SITE_URL',  'https://powerdatainc.com' );
+
+// ── 1b. PORTAL CRON ──────────────────────────────────────────────────────────
+$_pd_cron = ABSPATH . 'portal/pd-portal-cron.php';
+if ( file_exists( $_pd_cron ) ) {
+    require_once $_pd_cron;
+}
+unset( $_pd_cron );
 
 // ── 2. GENESIS SETUP ─────────────────────────────────────────────────────────
 add_action( 'genesis_setup', 'powerdata_genesis_setup', 15 );

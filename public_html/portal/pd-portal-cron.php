@@ -38,7 +38,7 @@ add_action( 'pd_expire_files', function () {
     // Load portal includes if not already loaded
     if ( ! defined( 'PD_PORTAL' ) ) {
         define( 'PD_PORTAL', true );
-        $portal_includes = WP_CONTENT_DIR . '/pd-portal/includes/config.php';
+        $portal_includes = ABSPATH . 'portal/includes/config.php';
         if ( file_exists( $portal_includes ) ) {
             require_once $portal_includes;
         } else {
