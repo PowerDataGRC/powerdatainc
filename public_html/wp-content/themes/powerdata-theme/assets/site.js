@@ -31,6 +31,14 @@
   bindReveal();
 
   // ── 2. MOBILE NAV TOGGLE ─────────────────────────────────────────────────
+  function updateHeaderHeight() {
+    var hdr = document.querySelector('.site-header');
+    if (hdr) document.documentElement.style.setProperty('--header-h', hdr.offsetHeight + 'px');
+  }
+  document.addEventListener('DOMContentLoaded', updateHeaderHeight);
+  window.addEventListener('resize', updateHeaderHeight);
+  updateHeaderHeight();
+
   document.addEventListener('click', function (e) {
     // Toggle open
     var toggle = e.target.closest('[data-menu-toggle]');
