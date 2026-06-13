@@ -21,7 +21,7 @@ define( 'PD_DB_FILE',      WP_CONTENT_DIR . '/pd-portal-files/portal.db' );  // 
 define( 'PD_PORTAL_URL',   'https://portal.powerdatainc.com' );
 define( 'PD_ADMIN_URL',    'https://admin.powerdatainc.com' );
 define( 'PD_SITE_NAME',    'PowerData Solutions' );
-define( 'PD_FROM_EMAIL',   'noreply@powerdatainc.com' );
+define( 'PD_FROM_EMAIL',   'letstalk@powerdatainc.com' );
 define( 'PD_FROM_NAME',    'PowerData Portal' );
 
 // ── Security ──────────────────────────────────────────────────────────────────
