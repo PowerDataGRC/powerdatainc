@@ -7,13 +7,22 @@
  */
 
 // ── 1. CONSTANTS ─────────────────────────────────────────────────────────────
-define( 'POWERDATA_VERSION',   '1.0.9' );
+define( 'POWERDATA_VERSION',   '1.1.0' );
 define( 'POWERDATA_DIR',       get_stylesheet_directory() );
 define( 'POWERDATA_URI',       get_stylesheet_directory_uri() );
 define( 'POWERDATA_SITE_NAME', 'PowerData Solutions Inc.' );
 define( 'POWERDATA_SITE_URL',  'https://powerdatainc.com' );
 
-// ── 1b. PORTAL CRON ──────────────────────────────────────────────────────────
+// ── 1b. PORTAL SUBDOMAIN REDIRECT WHITELIST ──────────────────────────────────
+// wp_safe_redirect() blocks cross-subdomain redirects by default.
+// Allow WP login to redirect back to admin.powerdatainc.com after authentication.
+add_filter( 'allowed_redirect_hosts', function ( $hosts ) {
+    $hosts[] = 'admin.powerdatainc.com';
+    $hosts[] = 'portal.powerdatainc.com';
+    return $hosts;
+} );
+
+// ── 1c. PORTAL CRON ──────────────────────────────────────────────────────────
 $_pd_cron = ABSPATH . 'portal/pd-portal-cron.php';
 if ( file_exists( $_pd_cron ) ) {
     require_once $_pd_cron;
