@@ -464,7 +464,31 @@ function powerdata_register_block_patterns() {
 	}
 }
 
-// ── 10. REMOVE SITEORIGIN PAGE BUILDER ───────────────────────────────────────
+// ── 10. TEMPLATE HELPERS ─────────────────────────────────────────────────────
+
+/**
+ * Estimate reading time in minutes.
+ * Used in the article template (page-article.php).
+ * Assumes ~200 words per minute average reading speed.
+ *
+ * @param  string $content Raw post content (may include HTML).
+ * @return int             Minutes rounded up; 0 when content is empty.
+ */
+function pd_reading_time_minutes( $content ) {
+	$words = str_word_count( wp_strip_all_tags( $content ) );
+	return $words > 0 ? max( 1, (int) ceil( $words / 200 ) ) : 0;
+}
+
+// ── 10b. ACF LOCAL FIELD GROUPS ──────────────────────────────────────────────
+// Loaded on the 'acf/init' hook so ACF is guaranteed to be available.
+add_action( 'acf/init', function () {
+	$fields_file = POWERDATA_DIR . '/includes/acf-fields.php';
+	if ( file_exists( $fields_file ) ) {
+		require_once $fields_file;
+	}
+} );
+
+// ── 10c. REMOVE SITEORIGIN PAGE BUILDER ──────────────────────────────────────
 /**
  * Deactivate SiteOrigin Page Builder gracefully.
  * Once new pages are live, you can deactivate/delete the plugin from
