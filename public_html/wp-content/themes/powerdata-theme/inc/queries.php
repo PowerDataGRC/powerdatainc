@@ -29,5 +29,9 @@ add_action( 'pre_get_posts', function ( $q ) {
 			'operator' => 'NOT IN',
 		];
 		$q->set( 'tax_query', $tax_query );
+
+		if ( ! $q->is_feed() ) {
+			$q->set( 'posts_per_page', 12 );
+		}
 	}
 } );

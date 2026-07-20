@@ -33,6 +33,12 @@ unset( $_pd_cron );
 require_once POWERDATA_DIR . '/inc/taxonomies.php';
 require_once POWERDATA_DIR . '/inc/queries.php';
 
+// ── 1e. ARTICLE RENDER (single.php + page-article.php share this) ───────────
+require_once POWERDATA_DIR . '/inc/article-render.php';
+
+// ── 1f. URL MIGRATION REDIRECTS (old root-level post URLs) ───────────────────
+require_once POWERDATA_DIR . '/inc/redirects.php';
+
 // ── 2. GENESIS SETUP ─────────────────────────────────────────────────────────
 add_action( 'genesis_setup', 'powerdata_genesis_setup', 15 );
 function powerdata_genesis_setup() {
