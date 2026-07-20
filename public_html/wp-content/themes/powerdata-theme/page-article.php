@@ -41,7 +41,18 @@ function pd_article_body() {
 
 	// Reading-time estimate
 	$reading_min = pd_reading_time_minutes( get_the_content() );
+	$is_archived = has_term( 'archived', 'article_status' );
 	?>
+
+	<?php if ( $is_archived ) : ?>
+	<!-- ░░ ARCHIVED NOTICE ░░ -->
+	<div class="pd-archived-notice">
+		<div class="pd-wrap">
+			<span class="pill amber">Archived</span>
+			<span>This article is kept for reference. Some details may have changed since publication.</span>
+		</div>
+	</div>
+	<?php endif; ?>
 
 	<!-- ░░ ARTICLE HERO ░░ -->
 	<section class="pd-article-hero pd-section-tight">
@@ -101,21 +112,12 @@ function pd_article_body() {
 		<div class="pd-wrap">
 			<h2 class="h-section" style="margin-bottom:40px;">Related Insights</h2>
 			<div class="pd-grid pd-grid-3">
-				<?php foreach ( array_slice( $related_posts, 0, 3 ) as $related ) :
+				<?php
+				foreach ( array_slice( $related_posts, 0, 3 ) as $related ) :
 					$rid = is_object( $related ) ? $related->ID : (int) $related;
-					$rcats = get_the_category( $rid );
-					?>
-				<a href="<?php echo esc_url( get_permalink( $rid ) ); ?>" class="pd-art" style="text-decoration:none;">
-					<?php if ( has_post_thumbnail( $rid ) ) : ?>
-					<div class="pd-art-thumb">
-						<?php echo get_the_post_thumbnail( $rid, 'medium', [ 'loading' => 'lazy' ] ); ?>
-					</div>
-					<?php endif; ?>
-					<span class="pd-art-cat"><?php echo esc_html( $rcats ? $rcats[0]->name : 'Insights' ); ?></span>
-					<h4><?php echo esc_html( get_the_title( $rid ) ); ?></h4>
-					<p class="muted" style="font-size:14.5px;margin-top:4px;"><?php echo wp_trim_words( get_the_excerpt( $rid ), 18, '…' ); ?></p>
-				</a>
-				<?php endforeach; ?>
+					get_template_part( 'template-parts/content-card', null, [ 'post_id' => $rid, 'variant' => 'compact' ] );
+				endforeach;
+				?>
 			</div>
 		</div>
 	</section>

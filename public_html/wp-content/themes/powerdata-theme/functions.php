@@ -29,6 +29,10 @@ if ( file_exists( $_pd_cron ) ) {
 }
 unset( $_pd_cron );
 
+// ── 1d. ARTICLE STATUS TAXONOMY (Archive / Unarchive) ────────────────────────
+require_once POWERDATA_DIR . '/inc/taxonomies.php';
+require_once POWERDATA_DIR . '/inc/queries.php';
+
 // ── 2. GENESIS SETUP ─────────────────────────────────────────────────────────
 add_action( 'genesis_setup', 'powerdata_genesis_setup', 15 );
 function powerdata_genesis_setup() {
