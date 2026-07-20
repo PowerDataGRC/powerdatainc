@@ -1,0 +1,76 @@
+name: Deploy to Hostinger (staging)
+
+on:
+  push:
+    branches: [ "staging" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure SSH
+      env:
+        SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+        SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+      run: |
+        mkdir -p ~/.ssh
+        printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+        chmod 600 ~/.ssh/deploy_key
+        ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+
+    - name: Ensure remote directories exist
+      env:
+        SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+      run: |
+        ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
+          "$SSH_USER@$SSH_HOST" \
+          "mkdir -p ~/domains/powerdatainc.com/public_html/staging/wp-content/themes/powerdata-theme ~/domains/powerdatainc.com/public_html/staging/portal"
+
+    - name: Sync theme
+      env:
+        SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+      run: |
+        rsync -avz --delete --checksum \
+          -e "ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+          public_html/wp-content/themes/powerdata-theme/ \
+          "$SSH_USER@$SSH_HOST:~/domains/powerdatainc.com/public_html/staging/wp-content/themes/powerdata-theme/"
+
+    - name: Verify theme version on server
+      env:
+        SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+      run: |
+        ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
+          "$SSH_USER@$SSH_HOST" \
+          "grep -m1 'POWERDATA_VERSION' ~/domains/powerdatainc.com/public_html/staging/wp-content/themes/powerdata-theme/functions.php && grep -m1 '^Version:' ~/domains/powerdatainc.com/public_html/staging/wp-content/themes/powerdata-theme/style.css"
+
+    - name: Sync portal
+      env:
+        SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+      run: |
+        rsync -avz --delete --checksum \
+          -e "ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+          public_html/portal/ \
+          "$SSH_USER@$SSH_HOST:~/domains/powerdatainc.com/public_html/staging/portal/"
+
+    - name: Sync WordPress .htaccess
+      env:
+        SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+        SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+      run: |
+        rsync -az \
+          -e "ssh -p $SSH_PORT -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+          public_html/.htaccess \
+          "$SSH_USER@$SSH_HOST:~/domains/powerdatainc.com/public_html/staging/.htaccess"
