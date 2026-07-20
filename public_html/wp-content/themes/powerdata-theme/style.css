@@ -1185,8 +1185,8 @@ h1, h2, h3, h4, h5, h6 {
 .author-bio__social:hover { color: var(--accent); }
 
 .author-bio__text {
-  color: var(--ink-soft);
-  font-size: 15px;
+  color: var(--muted);
+  font-size: 13.5px;
   line-height: 1.65;
 }
 .author-bio__text > *:first-child { margin-top: 0; }
