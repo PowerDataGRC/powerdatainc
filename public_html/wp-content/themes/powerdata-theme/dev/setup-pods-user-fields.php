@@ -13,12 +13,13 @@ $api = pods_api();
 
 $pod = $api->load_pod( [ 'name' => 'user' ], false );
 if ( ! $pod ) {
+    // type 'user' extends the existing WP Users object type (stored in
+    // wp_usermeta via the core meta API) — NOT a new advanced content type.
     $pod_id = $api->save_pod( [
         'name'    => 'user',
         'label'   => 'Users',
-        'type'    => 'pod',
+        'type'    => 'user',
         'storage' => 'meta',
-        'object'  => 'user',
     ] );
     $pod = $api->load_pod( [ 'id' => $pod_id ], false );
     WP_CLI::log( 'Created Pods "user" pod (extends WP Users).' );
