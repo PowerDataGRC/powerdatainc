@@ -14,7 +14,12 @@ add_action( 'init', function () {
 			'singular_name' => 'Article Status',
 			'menu_name'     => 'Article Status',
 		],
-		'hierarchical'      => false,
+		// hierarchical => true is what gives WP a checkbox list here (Quick
+		// Edit and the block editor sidebar) instead of a Tags-style
+		// comma-separated free-text box — required by the brief's
+		// "single checkbox" acceptance criterion even though there's no
+		// real parent/child relationship between the two terms.
+		'hierarchical'      => true,
 		'public'            => true,
 		'show_admin_column' => true,
 		'show_in_rest'      => true, // required for the block editor sidebar
