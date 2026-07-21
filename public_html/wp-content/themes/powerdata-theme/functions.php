@@ -591,7 +591,7 @@ function powerdata_custom_footer() {
 					<ul>
 						<li><a href="<?php echo home_url( '/priam/' ); ?>">Overview</a></li>
 						<li><a href="https://priamtiv.com" target="_blank" rel="noopener">priamtiv.com ↗</a></li>
-						<li><a href="https://priamtiv.com/webform/contact" target="_blank" rel="noopener">Book a walkthrough ↗</a></li>
+						<li><a href="https://priamtiv.com/hello" target="_blank" rel="noopener">Book a walkthrough ↗</a></li>
 					</ul>
 				</div>
 			</div>
