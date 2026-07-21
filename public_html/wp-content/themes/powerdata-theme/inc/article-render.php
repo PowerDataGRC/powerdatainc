@@ -25,8 +25,10 @@ function pd_render_article_template() {
  * Output the full article layout for the current post in The Loop.
  */
 function pd_article_body() {
-	$has_acf       = function_exists( 'get_field' );
-	$related_posts = $has_acf ? get_field( 'article_related_posts' ) : [];
+	$post_id       = get_the_ID();
+	$pod           = function_exists( 'pods' ) ? pods( 'post', $post_id ) : null;
+	$related_posts = $pod ? (array) $pod->field( 'article_related_posts' ) : [];
+	$subtitle      = $pod ? $pod->display( 'article_subtitle' ) : '';
 	$author_name   = get_the_author_meta( 'display_name' );
 
 	// Category label for eyebrow
@@ -54,6 +56,9 @@ function pd_article_body() {
 			<div class="pd-article-hero-inner">
 				<span class="eyebrow"><?php echo esc_html( $cat_name ); ?></span>
 				<h1 class="pd-article-title"><?php the_title(); ?></h1>
+				<?php if ( $subtitle ) : ?>
+					<p class="pd-article-subtitle lede"><?php echo esc_html( $subtitle ); ?></p>
+				<?php endif; ?>
 				<div class="pd-article-meta">
 					<span>By <?php echo esc_html( $author_name ); ?></span>
 					<span class="pd-article-meta-sep" aria-hidden="true">·</span>
@@ -108,7 +113,7 @@ function pd_article_body() {
 			<div class="pd-grid pd-grid-3">
 				<?php
 				foreach ( array_slice( $related_posts, 0, 3 ) as $related ) :
-					$rid = is_object( $related ) ? $related->ID : (int) $related;
+					$rid = is_array( $related ) ? (int) $related['ID'] : (int) $related;
 					get_template_part( 'template-parts/content-card', null, [ 'post_id' => $rid, 'variant' => 'compact' ] );
 				endforeach;
 				?>

@@ -489,15 +489,6 @@ function pd_reading_time_minutes( $content ) {
 	return $words > 0 ? max( 1, (int) ceil( $words / 200 ) ) : 0;
 }
 
-// ── 10b. ACF LOCAL FIELD GROUPS ──────────────────────────────────────────────
-// Loaded on the 'acf/init' hook so ACF is guaranteed to be available.
-add_action( 'acf/init', function () {
-	$fields_file = POWERDATA_DIR . '/includes/acf-fields.php';
-	if ( file_exists( $fields_file ) ) {
-		require_once $fields_file;
-	}
-} );
-
 // ── 10c. REMOVE SITEORIGIN PAGE BUILDER ──────────────────────────────────────
 /**
  * Deactivate SiteOrigin Page Builder gracefully.
