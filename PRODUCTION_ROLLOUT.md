@@ -6,18 +6,18 @@ Everything below has been verified working on staging (`https://staging.powerdat
 
 ## 0. Before starting
 
-- [ ] Take a fresh production database backup. (An earlier one exists from before Phase 4, but everything since — Phases 4–6 — has changed a lot; back up again immediately before this rollout.)
-- [ ] Confirm no one is actively editing posts/pages in WP Admin during the rollout (permalink structure and post-type changes touch every post).
+- [x] Take a fresh production database backup. (An earlier one exists from before Phase 4, but everything since — Phases 4–6 — has changed a lot; back up again immediately before this rollout.)
+- [x] Confirm no one is actively editing posts/pages in WP Admin during the rollout (permalink structure and post-type changes touch every post).
 
 ## 1. Merge the code
 
 Merge in order (each PR is stacked on the previous): #5 → #6 → #7 → #8 → #9, all the way to `main`. `deploy.yml` fires on the `main` push and rsyncs the theme to `~/domains/powerdatainc.com/public_html/`.
 
-- [ ] Merge PR #5 (Phase 1: author bio → Pods)
-- [ ] Merge PR #6 (Phase 2: Article Status taxonomy)
-- [ ] Merge PR #7 (Phase 3: URL migration, templates, categories)
-- [ ] Merge PR #8 (Phase 4: ACF → Pods)
-- [ ] Merge PR #9 (Phase 5 & 6: retire DPT, search, performance, docs)
+- [x] Merge PR #5 (Phase 1: author bio → Pods)
+- [x] Merge PR #6 (Phase 2: Article Status taxonomy)
+- [x] Merge PR #7 (Phase 3: URL migration, templates, categories)
+- [x] Merge PR #8 (Phase 4: ACF → Pods)
+- [x] Merge PR #9 (Phase 5 & 6: retire DPT, search, performance, docs)
 - [ ] Confirm the `Deploy to Hostinger` GitHub Action run succeeds
 
 ## 2. Database-level setup (WP-CLI, run in this exact order)
