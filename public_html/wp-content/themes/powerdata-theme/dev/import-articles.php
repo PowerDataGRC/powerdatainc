@@ -56,7 +56,7 @@ $content_1 = '<p>For small human service organizations, &ldquo;risk management&r
 	. '<li><strong>PRIAM&rsquo;s Solution:</strong> A <strong>queue-based incident system</strong>. Every report has a priority and an owner (IT lead, ops manager). Status moves from Submitted &rarr; Assigned &rarr; Closed, with an immutable audit trail.</li></ul>'
 	. '<h2>The Bottom Line for Small Providers</h2>'
 	. '<p>Risk doesn&rsquo;t wait for you to be ready. You don&rsquo;t need a GRC specialist. You need a single source of truth. With <strong>PRIAM</strong>, you can move from overlooked risks to operational visibility&mdash;setup in 15 minutes, no credit card required.</p>'
-	. '<p><em>Ready to stop juggling spreadsheets? <a href="https://priamtiv.com/webform/contact">Schedule a 30-min walkthrough</a> and find out how PRIAM can simplify your operation.</em></p>';
+	. '<p><em>Ready to stop juggling spreadsheets? <a href="https://priamtiv.com/hello">Schedule a 30-min walkthrough</a> and find out how PRIAM can simplify your operation.</em></p>';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Article 2 content
@@ -83,7 +83,7 @@ $content_2 = '<p>If you run a small human service organization, you likely check
 	. '<li><strong>PRIAM&rsquo;s Approach:</strong> An <strong>asset register</strong> for people <em>and</em> things (devices, vehicles). Every asset links to incidents. When a device goes missing, you don&rsquo;t scramble&mdash;the record is already there.</li></ul>'
 	. '<h2>From Training to True Readiness</h2>'
 	. '<p>Annual training is table stakes. True HIPAA readiness requires <strong>Policies, Risk, Incidents, and Assets</strong> to work together. That&rsquo;s exactly what PRIAM delivers&mdash;one dashboard, no specialist vocabulary, and an audit trail that builds itself. Set it up Monday, run a real assessment Friday.</p>'
-	. '<p><em>Ready to stop juggling spreadsheets? <a href="https://priamtiv.com/webform/contact">Schedule a 30-min walkthrough</a> and find out how PRIAM can simplify your operation.</em></p>';
+	. '<p><em>Ready to stop juggling spreadsheets? <a href="https://priamtiv.com/hello">Schedule a 30-min walkthrough</a> and find out how PRIAM can simplify your operation.</em></p>';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Article 3 content
@@ -111,7 +111,7 @@ $content_3 = '<p>Let&rsquo;s clear up a common and costly confusion: <strong>Inc
 	. '<p><strong>PRIAM&rsquo;s Fix:</strong> The <strong>Management Dashboard</strong> provides cross-cutting visibility. A single risk is connected to the policy that mitigates it, the asset it affects, and any relevant past incidents. It&rsquo;s one source of truth.</p>'
 	. '<h2>From Reactive Logs to Proactive Management</h2>'
 	. '<p>Stop mistaking a rearview mirror for a windshield. Move from simple incident reporting to true <strong>PRIAM</strong> risk management: Policies that are read, Risks that are continuously assessed, Incidents with clear owners, and Assets that are tracked. Setup in 15 minutes. No credit card required.</p>'
-	. '<p><em>Ready to stop juggling spreadsheets? <a href="https://priamtiv.com/webform/contact">Schedule a 30-min walkthrough</a> and find out how PRIAM can simplify your operation.</em></p>';
+	. '<p><em>Ready to stop juggling spreadsheets? <a href="https://priamtiv.com/hello">Schedule a 30-min walkthrough</a> and find out how PRIAM can simplify your operation.</em></p>';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Article definitions

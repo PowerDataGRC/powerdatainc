@@ -185,7 +185,7 @@ function pd_article_body() {
 						</p>
 					</div>
 					<div class="pd-article-cta-actions">
-						<a href="https://priamtiv.com/webform/contact"
+						<a href="https://priamtiv.com/hello"
 						   class="btn btn-primary btn-lg"
 						   target="_blank" rel="noopener noreferrer">
 							Book a Walkthrough →
