@@ -15,6 +15,9 @@ public_html/wp-content/cache/
 .DS_Store
 Thumbs.db
 
+# Node dependencies (covers/render pipeline)
+node_modules/
+
 # IDE files
 .vscode/
 .idea/
