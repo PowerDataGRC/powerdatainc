@@ -4,19 +4,19 @@
  * Template Post Type: post, page
  *
  * Case study / portfolio template for PowerData technology projects.
- * Uses ACF for project meta: client, purpose, tech tags, stats, testimonial,
- * and technology toolbox. Body content (challenge, solution, results prose)
- * comes from the standard WordPress editor.
+ * Uses Pods for project meta: client, purpose, tech tags, stats,
+ * testimonial, and technology toolbox. Body content (challenge, solution,
+ * results prose) comes from the standard WordPress editor.
  *
- * ACF fields expected (registered in includes/acf-fields.php):
+ * Pods fields expected (registered in dev/setup-pods-post-fields.php):
  *   project_client             – text
  *   project_purpose            – text (one sentence)
  *   project_tech_tags          – text (comma-separated)
- *   project_stats              – repeater: stat_value / stat_label
+ *   project_stats              – repeatable group: stat_value / stat_label
  *   project_testimonial_quote  – textarea
  *   project_testimonial_attr   – text
  *   project_technologies       – text (comma-separated)
- *   project_hero_image         – image
+ *   project_hero_image         – file (image)
  *
  * @package PowerData
  */
@@ -35,16 +35,16 @@ function pd_render_project_template() {
 }
 
 function pd_project_body() {
-	$has_acf = function_exists( 'get_field' );
+	$pod = function_exists( 'pods' ) ? pods( 'post', get_the_ID() ) : null;
 
-	$client      = $has_acf ? get_field( 'project_client' )            : '';
-	$purpose     = $has_acf ? get_field( 'project_purpose' )           : '';
-	$tech_tags   = $has_acf ? get_field( 'project_tech_tags' )         : '';
-	$stats       = $has_acf ? get_field( 'project_stats' )             : [];
-	$testimonial = $has_acf ? get_field( 'project_testimonial_quote' ) : '';
-	$attr        = $has_acf ? get_field( 'project_testimonial_attr' )  : '';
-	$technologies = $has_acf ? get_field( 'project_technologies' )     : '';
-	$hero_image  = $has_acf ? get_field( 'project_hero_image' )        : null;
+	$client       = $pod ? $pod->display( 'project_client' )            : '';
+	$purpose      = $pod ? $pod->display( 'project_purpose' )           : '';
+	$tech_tags    = $pod ? $pod->display( 'project_tech_tags' )         : '';
+	$stats        = $pod ? (array) $pod->field( 'project_stats' )       : [];
+	$testimonial  = $pod ? $pod->display( 'project_testimonial_quote' ) : '';
+	$attr         = $pod ? $pod->display( 'project_testimonial_attr' )  : '';
+	$technologies = $pod ? $pod->display( 'project_technologies' )      : '';
+	$img_url      = $pod ? $pod->field( 'project_hero_image.guid' )     : '';
 
 	// Parse comma-separated tag/technology strings into arrays.
 	$tags_arr = $tech_tags
@@ -56,14 +56,11 @@ function pd_project_body() {
 
 	// Build hero background style when a custom image is provided.
 	$hero_bg_style = '';
-	if ( $hero_image ) {
-		$img_url = is_array( $hero_image ) ? ( $hero_image['url'] ?? '' ) : $hero_image;
-		if ( $img_url ) {
-			$hero_bg_style = sprintf(
-				'background-image:linear-gradient(rgba(15,27,45,.82),rgba(15,27,45,.92)),url(%s);background-size:cover;background-position:center;',
-				esc_url( $img_url )
-			);
-		}
+	if ( $img_url ) {
+		$hero_bg_style = sprintf(
+			'background-image:linear-gradient(rgba(15,27,45,.82),rgba(15,27,45,.92)),url(%s);background-size:cover;background-position:center;',
+			esc_url( $img_url )
+		);
 	}
 	?>
 

@@ -165,16 +165,7 @@ foreach ( $articles as $article ) {
 		continue;
 	}
 
-	// Assign the PD Article page template so the custom layout fires.
-	update_post_meta( $post_id, '_wp_page_template', 'page-article.php' );
-
-	// Pre-populate ACF author fields.
-	if ( function_exists( 'update_field' ) ) {
-		update_field( 'article_author_name',     'Murray S.',                                     $post_id );
-		update_field( 'article_author_title',    'Solutions Architect, PowerData Solutions',       $post_id );
-		update_field( 'article_author_bio',      'Murray is a solutions architect with PowerData Solutions with over 20 years of experience in SMB risk management.', $post_id );
-		update_field( 'article_author_linkedin', 'https://www.linkedin.com/company/powerdatasolutions/', $post_id );
-	}
+	// single.php renders every post automatically — no page template needed.
 
 	WP_CLI::success( 'Created (ID ' . $post_id . '): ' . $article['slug'] );
 }

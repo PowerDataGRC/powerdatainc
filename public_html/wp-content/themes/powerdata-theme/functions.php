@@ -29,6 +29,19 @@ if ( file_exists( $_pd_cron ) ) {
 }
 unset( $_pd_cron );
 
+// ── 1d. ARTICLE STATUS TAXONOMY (Archive / Unarchive) ────────────────────────
+require_once POWERDATA_DIR . '/inc/taxonomies.php';
+require_once POWERDATA_DIR . '/inc/queries.php';
+
+// ── 1e. ARTICLE RENDER (single.php + page-article.php share this) ───────────
+require_once POWERDATA_DIR . '/inc/article-render.php';
+
+// ── 1f. URL MIGRATION REDIRECTS (old root-level post URLs) ───────────────────
+require_once POWERDATA_DIR . '/inc/redirects.php';
+
+// ── 1g. SHORTCODES ────────────────────────────────────────────────────────────
+require_once POWERDATA_DIR . '/inc/shortcodes.php';
+
 // ── 2. GENESIS SETUP ─────────────────────────────────────────────────────────
 add_action( 'genesis_setup', 'powerdata_genesis_setup', 15 );
 function powerdata_genesis_setup() {
@@ -478,15 +491,6 @@ function pd_reading_time_minutes( $content ) {
 	$words = str_word_count( wp_strip_all_tags( $content ) );
 	return $words > 0 ? max( 1, (int) ceil( $words / 200 ) ) : 0;
 }
-
-// ── 10b. ACF LOCAL FIELD GROUPS ──────────────────────────────────────────────
-// Loaded on the 'acf/init' hook so ACF is guaranteed to be available.
-add_action( 'acf/init', function () {
-	$fields_file = POWERDATA_DIR . '/includes/acf-fields.php';
-	if ( file_exists( $fields_file ) ) {
-		require_once $fields_file;
-	}
-} );
 
 // ── 10c. REMOVE SITEORIGIN PAGE BUILDER ──────────────────────────────────────
 /**
