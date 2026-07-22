@@ -42,6 +42,9 @@ require_once POWERDATA_DIR . '/inc/redirects.php';
 // ── 1g. SHORTCODES ────────────────────────────────────────────────────────────
 require_once POWERDATA_DIR . '/inc/shortcodes.php';
 
+// ── 1h. ARTICLE COVER IMAGES ──────────────────────────────────────────────────
+require_once POWERDATA_DIR . '/inc/covers.php';
+
 // ── 2. GENESIS SETUP ─────────────────────────────────────────────────────────
 add_action( 'genesis_setup', 'powerdata_genesis_setup', 15 );
 function powerdata_genesis_setup() {

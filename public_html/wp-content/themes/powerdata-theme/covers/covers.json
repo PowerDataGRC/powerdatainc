@@ -1,0 +1,42 @@
+[
+  {
+    "file": "health-check-01.webp",
+    "thumb": "health-check-01-thumb.webp",
+    "category": "health-check",
+    "field": "#0E7A5A",
+    "alt": "PowerData field guide: health checked. — a clear read on where the business stands today.",
+    "created": "2026-07-22"
+  },
+  {
+    "file": "data-protection-01.webp",
+    "thumb": "data-protection-01-thumb.webp",
+    "category": "data-protection",
+    "field": "#0F1B2D",
+    "alt": "PowerData field guide: data protected. — simple habits that keep customer information where it belongs.",
+    "created": "2026-07-22"
+  },
+  {
+    "file": "cyber-security-01.webp",
+    "thumb": "cyber-security-01-thumb.webp",
+    "category": "cyber-security",
+    "field": "#fe5a1d",
+    "alt": "PowerData field guide: cyber awareness. — spotting the trick in the inbox before anyone clicks it.",
+    "created": "2026-07-22"
+  },
+  {
+    "file": "operational-efficiency-01.webp",
+    "thumb": "operational-efficiency-01-thumb.webp",
+    "category": "operational-efficiency",
+    "field": "#16697a",
+    "alt": "PowerData field guide: operations streamlined. — less friction between the work and the outcome.",
+    "created": "2026-07-22"
+  },
+  {
+    "file": "compliance-01.webp",
+    "thumb": "compliance-01-thumb.webp",
+    "category": "compliance",
+    "field": "#5A2A54",
+    "alt": "PowerData field guide: compliance handled. — meeting the mark — on paper and in practice.",
+    "created": "2026-07-22"
+  }
+]

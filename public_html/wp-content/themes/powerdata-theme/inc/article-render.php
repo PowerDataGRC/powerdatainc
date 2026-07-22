@@ -73,19 +73,24 @@ function pd_article_body() {
 	</section>
 
 	<!-- ░░ FEATURED IMAGE ░░ -->
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php
+	// Checking the returned HTML (not has_post_thumbnail()) so posts with no
+	// manually set Featured Image still get the category cover fallback —
+	// see inc/covers.php's post_thumbnail_html filter.
+	$featured_image = get_the_post_thumbnail(
+		get_the_ID(),
+		'pd-article-hero',
+		[
+			'class'   => 'pd-article-img',
+			'loading' => 'eager',
+			'alt'     => esc_attr( get_the_title() ),
+		]
+	);
+	?>
+	<?php if ( $featured_image ) : ?>
 	<div class="pd-article-featured-image">
 		<div class="pd-wrap" style="max-width:900px;">
-			<?php
-			the_post_thumbnail(
-				'full',
-				[
-					'class'   => 'pd-article-img',
-					'loading' => 'eager',
-					'alt'     => esc_attr( get_the_title() ),
-				]
-			);
-			?>
+			<?php echo $featured_image; ?>
 		</div>
 	</div>
 	<?php endif; ?>

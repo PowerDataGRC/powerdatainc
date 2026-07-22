@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'Schibsted Grotesk';
+    font-weight: 800;
+    font-style: normal;
+    src: url('../../assets/fonts/schibsted-grotesk-800.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Instrument Serif';
+    font-weight: 400;
+    font-style: italic;
+    src: url('../../assets/fonts/instrument-serif-italic-400.woff2') format('woff2');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { margin: 0; }
+  #cover.thumb .kicker-text,
+  #cover.thumb .subhead { display: none; }
+  #cover.thumb .motif { transform: scale(.72); transform-origin: top right; }
+</style>
+</head>
+<body>
+
+<div id="cover" style="width:1600px;height:900px;border-radius:0;overflow:hidden;
+     background:#0F1B2D;position:relative;box-sizing:border-box;
+     font-family:'Hanken Grotesk',system-ui,sans-serif;">
+
+  <div style="position:absolute;right:-190px;bottom:-240px;width:800px;height:800px;
+       border-radius:50%;background:#16314A;"></div>
+  <div style="position:absolute;left:-110px;top:-140px;width:400px;height:400px;
+       border-radius:50%;background:#22364A;"></div>
+
+  <div style="position:absolute;inset:0;padding:72px 84px;display:flex;
+       flex-direction:column;justify-content:space-between;">
+
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+      <span class="kicker-text" style="font-size:22px;font-weight:600;letter-spacing:.18em;
+            text-transform:uppercase;color:#8FB0CC;">PowerData &middot; Field guide</span>
+      <span class="motif"><svg width="184" height="140" viewBox="0 0 92 70" fill="none">
+  <path d="M8 34 C 8 12, 84 12, 84 34" stroke="#FAF8F4" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M46 8 L46 20" stroke="#B5D4F4" stroke-width="3.5" stroke-linecap="round"/>
+  <rect x="20" y="40" width="16" height="20" rx="2.5" fill="#FAF8F4"/>
+  <rect x="38" y="44" width="16" height="16" rx="2.5" fill="#B5D4F4"/>
+  <rect x="56" y="40" width="16" height="20" rx="2.5" fill="#FAF8F4"/>
+</svg></span>
+    </div>
+
+    <div>
+      <h1 style="margin:0;font-family:'Schibsted Grotesk',sans-serif;font-weight:800;
+          font-size:150px;line-height:.98;letter-spacing:-.03em;color:#FAF8F4;">
+        Data,<br>
+        <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;
+              font-style:italic;letter-spacing:0;color:#B5D4F4;">protected.</span>
+      </h1>
+      <p class="subhead" style="margin:28px 0 0;font-size:34px;color:#8FB0CC;max-width:36ch;">
+        Simple habits that keep customer information where it belongs.</p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

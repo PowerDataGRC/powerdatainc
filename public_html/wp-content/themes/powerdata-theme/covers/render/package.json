@@ -1,0 +1,13 @@
+{
+  "name": "powerdata-article-covers",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Rasterization pipeline for the PowerData article-cover image system. See covers/DEVELOPERS.md.",
+  "scripts": {
+    "render": "node render.js"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0",
+    "sharp": "^0.33.5"
+  }
+}

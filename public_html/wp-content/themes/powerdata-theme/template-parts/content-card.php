@@ -20,11 +20,15 @@ $cats          = get_the_category( $post_id );
 $cat_name      = $cats ? $cats[0]->name : 'Insights';
 $excerpt_words = 'compact' === $variant ? 18 : 22;
 $is_archived   = has_term( 'archived', 'article_status', $post_id );
+// Checking the returned HTML (not has_post_thumbnail()) so posts with no
+// manually set Featured Image still get the category cover fallback —
+// see inc/covers.php's post_thumbnail_html filter.
+$thumb_image   = get_the_post_thumbnail( $post_id, 'pd-article-thumb', [ 'loading' => 'lazy' ] );
 ?>
 <a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>" class="pd-art" style="text-decoration:none;">
-	<?php if ( has_post_thumbnail( $post_id ) ) : ?>
+	<?php if ( $thumb_image ) : ?>
 	<div class="pd-art-thumb">
-		<?php echo get_the_post_thumbnail( $post_id, 'medium', [ 'loading' => 'lazy' ] ); ?>
+		<?php echo $thumb_image; ?>
 	</div>
 	<?php endif; ?>
 	<span class="pd-art-cat"><?php echo esc_html( $cat_name ); ?><?php echo $is_archived ? ' · Archived' : ''; ?></span>
