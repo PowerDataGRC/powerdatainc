@@ -7,7 +7,7 @@
  */
 
 // ── 1. CONSTANTS ─────────────────────────────────────────────────────────────
-define( 'POWERDATA_VERSION',   '1.2.0' );
+define( 'POWERDATA_VERSION',   '1.2.1' );
 define( 'POWERDATA_DIR',       get_stylesheet_directory() );
 define( 'POWERDATA_URI',       get_stylesheet_directory_uri() );
 define( 'POWERDATA_SITE_NAME', 'PowerData Solutions Inc.' );
