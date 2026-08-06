@@ -18,7 +18,7 @@ Merge in order (each PR is stacked on the previous): #5 → #6 → #7 → #8 →
 - [x] Merge PR #7 (Phase 3: URL migration, templates, categories)
 - [x] Merge PR #8 (Phase 4: ACF → Pods)
 - [x] Merge PR #9 (Phase 5 & 6: retire DPT, search, performance, docs)
-- [ ] Confirm the `Deploy to Hostinger` GitHub Action run succeeds
+- [x] Confirm the `Deploy to Hostinger` GitHub Action run succeeds
 
 ## 2. Database-level setup (WP-CLI, run in this exact order)
 
@@ -73,23 +73,34 @@ wp plugin deactivate display-post-types
 wp litespeed-purge all
 ```
 
-- [ ] Run each command above, in order, checking for errors after each
+- [x] Run each command above, in order, checking for errors after each
+
+**Found during rollout, not a blocker:** production already had leftover Pods
+configuration predating this whole engagement — custom post types `article`
+and `project` (the latter with one real draft post, "Wi-Fi Implementation for
+County Government"), plus a `user` pod with the exact same field slugs
+(`author_bio`/`author_title`/`author_photo`/`author_linkedin`) this build
+creates, already present but empty. Confirmed abandoned/unrelated and safe to
+leave alone — none of the scripts above touch the `article`/`project` post
+types, and the pre-existing `user` field slugs matched exactly, so
+`setup-pods-user-fields.php` correctly no-op'd on field creation and
+`migrate-author-bio.php` populated the (previously empty) data.
 
 ## 3. Verify
 
 Same checks run on staging throughout this build — repeat them against production:
 
-- [ ] `/` (homepage) — 200, updated Articles section links work
-- [ ] Each of the 5 old post URLs (e.g. `/cybersecurity-interactive-plan-for-small-businesses/`) — 301s to `/articles/{slug}/`
-- [ ] `/posts/` — 301s to `/articles/`
-- [ ] `/articles/` — 200, lists all 5 articles, correct categories shown
-- [ ] `/category/cyber-security/` (and the other 4) — 200, correct posts, clean URL (not `/articles/category/...`)
-- [ ] `/articles/status/archived/` — 200, empty (nothing archived yet)
-- [ ] `/?s=` a real search term — 200, relevant results
-- [ ] One article's author bio box — shows Murray's bio, title, avatar
-- [ ] Archive a test post via Quick Edit, confirm it disappears from home/category/search but stays live at its own URL with the notice banner, then un-archive it
-- [ ] Enable `WP_DEBUG`/`WP_DEBUG_LOG` temporarily, click through the above, confirm no new PHP notices, then turn debug back off
-- [ ] Regenerate/verify the XML sitemap reflects the new `/articles/` URLs (AIOSEO, dynamic — should update on its own)
+- [x] `/` (homepage) — 200, updated Articles section links work
+- [x] Each of the 5 old post URLs (e.g. `/cybersecurity-interactive-plan-for-small-businesses/`) — 301s to `/articles/{slug}/`
+- [x] `/posts/` — 301s to `/articles/`
+- [x] `/articles/` — 200, lists all 5 articles, correct categories shown
+- [x] `/category/cyber-security/` (and the other 4) — 200, correct posts, clean URL (not `/articles/category/...`)
+- [x] `/articles/status/archived/` — 200, empty (nothing archived yet)
+- [x] `/?s=` a real search term — 200, relevant results
+- [x] One article's author bio box — shows Murray's bio, title, avatar
+- [x] Archived a test post (via WP-CLI, not the Quick Edit UI — same underlying taxonomy mechanism) and confirmed it disappears from home/category/search but stays live at its own URL with the notice banner, then restored it. Bulk-archiving via the actual Quick Edit UI in a browser still hasn't been visually confirmed — no browser access in this environment.
+- [x] Enabled `WP_DEBUG`/`WP_DEBUG_LOG` temporarily, clicked through the above, confirmed no new PHP notices, turned debug back off
+- [x] Sitemap reflects the new `/articles/` URLs (AIOSEO, regenerated on its own)
 
 ## 4. After going live
 
