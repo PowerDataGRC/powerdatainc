@@ -40,11 +40,29 @@
 
 <!-- COURSES ─────────────────────────────────────────────────────────────────── -->
 <!-- wp:html -->
+<style>
+  @media (min-width: 981px) { #courses .pd-course-grid { grid-template-columns: repeat(3, 1fr); } }
+  #courses .pd-xcourse .foot { justify-content: flex-end; margin-top: auto; }
+  #courses .pd-xcourse ul { margin-bottom: 24px; }
+  .pd-xcourse-dark { background: var(--ink); border-color: var(--ink); color: #DCE3EC; }
+  .pd-xcourse-dark .h-card { color: #fff; }
+  .pd-xcourse-dark > p, .pd-xcourse-dark ul li { color: #C7D0DC; }
+  .pd-xcourse-dark .num { color: var(--accent-bright); }
+  .pd-xcourse-dark .pill { background: rgba(22,162,118,.18); color: #8FD9BE; }
+  .pd-xcourse-dark .pill.outline { background: transparent; border-color: rgba(255,255,255,.24); color: #C7D0DC; }
+  .pd-xcourse-dark .foot { background: rgba(255,255,255,.05); border-top-color: rgba(255,255,255,.12); }
+  .pd-segs { display: grid; gap: 18px; grid-template-columns: 1fr; margin-top: 36px; }
+  @media (min-width: 761px) { .pd-segs { grid-template-columns: repeat(3, 1fr); } }
+  .pd-seg { border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); padding: 28px 24px; text-align: center; background: rgba(255,255,255,.04); }
+  .pd-seg .ico { font-size: 32px; line-height: 1; }
+  .pd-seg h3 { font-family: var(--font-display); font-size: 18px; margin: 14px 0 8px; color: #8FD9BE; }
+  .pd-seg p { font-size: 14.5px; color: #AEB9C8; line-height: 1.55; }
+</style>
 <section class="pd-section-tight" id="courses" aria-labelledby="courses-heading">
   <div class="pd-wrap">
     <div class="reveal" style="max-width:640px;margin-bottom:36px;">
       <span class="eyebrow">The catalog</span>
-      <h2 id="courses-heading" class="h-section">Two courses. Real behavior change.</h2>
+      <h2 id="courses-heading" class="h-section">Three Courses - Behavior Change &amp; Results</h2>
     </div>
 
     <div class="pd-course-grid" role="list">
@@ -67,12 +85,35 @@
           <li><span class="num" aria-hidden="true">→</span> How &amp; when to report an incident</li>
         </ul>
         <div class="foot">
-          <span class="price"><b>$149</b> <small>/ learner</small></span>
           <a class="btn btn-primary" href="#enroll" data-course="Cyber Protection Awareness">Enroll →</a>
         </div>
       </article>
 
-      <!-- Course 2: HIPAA & Data Protection -->
+      <!-- Course 2: AI for Small Business (dark card) -->
+      <article class="card pd-xcourse pd-xcourse-dark reveal" role="listitem" aria-labelledby="course-ai-title">
+        <div class="bar" style="background:var(--accent-bright)"></div>
+        <div class="body">
+          <div class="meta">
+            <span class="pill">60-minute crash course</span>
+            <span class="pill outline">Live · Up to 20 people</span>
+          </div>
+          <h2 id="course-ai-title" class="h-card">AI for Small Business – for Productivity</h2>
+        </div>
+        <p>A live, hands-on session that shows your team how to use AI tools safely and productively — no technical background needed.</p>
+        <ul>
+          <li><span class="num" aria-hidden="true">→</span> What AI tools actually are (and aren't)</li>
+          <li><span class="num" aria-hidden="true">→</span> Free vs. paid — what matters for your team</li>
+          <li><span class="num" aria-hidden="true">→</span> Basic functions you can use starting today</li>
+          <li><span class="num" aria-hidden="true">→</span> How AI helps with market research &amp; business planning</li>
+          <li><span class="num" aria-hidden="true">→</span> Client confidentiality — what to share and what not to</li>
+          <li><span class="num" aria-hidden="true">→</span> Live examples &amp; Q&amp;A</li>
+        </ul>
+        <div class="foot">
+          <a class="btn btn-primary" href="#enroll" data-course="AI for Small Business – for Productivity">Enroll →</a>
+        </div>
+      </article>
+
+      <!-- Course 3: HIPAA & Data Protection -->
       <article class="card pd-xcourse reveal" role="listitem" aria-labelledby="course-hipaa-title">
         <div class="bar" style="background:var(--amber)"></div>
         <div class="body">
@@ -90,7 +131,6 @@
           <li><span class="num" style="color:var(--amber)" aria-hidden="true">→</span> Everything in Cyber Protection Awareness</li>
         </ul>
         <div class="foot">
-          <span class="price"><b>$199</b> <small>/ learner</small></span>
           <a class="btn btn-primary" href="#enroll" data-course="HIPAA & Data Protection Awareness">Enroll →</a>
         </div>
       </article>
@@ -100,6 +140,34 @@
     <p class="muted reveal" style="margin-top:20px;font-size:14.5px;">
       Enrolling 5 or more people? <a class="textlink" href="#enroll">Ask about team pricing →</a>
     </p>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR (bottom of the training catalog) -->
+<section class="pd-section-tight band-ink" aria-labelledby="segments-heading">
+  <div class="pd-wrap">
+    <div class="reveal" style="max-width:720px;">
+      <span class="eyebrow on-dark">Who this is for</span>
+      <h2 id="segments-heading" class="h-section">Built for teams in three industries.</h2>
+      <p class="lede" style="margin-top:14px;">Every course is written for working professionals who need practical skills they can use the next day — not specialists, and not developers who live in code.</p>
+    </div>
+    <div class="pd-segs reveal" role="list">
+      <div class="pd-seg" role="listitem">
+        <div class="ico" aria-hidden="true">🏥</div>
+        <h3>Healthcare</h3>
+        <p>Administrators, coordinators, and clinical staff who want to work smarter without compromising patient privacy.</p>
+      </div>
+      <div class="pd-seg" role="listitem">
+        <div class="ico" aria-hidden="true">🌾</div>
+        <h3>Agriculture</h3>
+        <p>Farm operators, cooperative staff, and ag professionals managing market research, reporting, and planning.</p>
+      </div>
+      <div class="pd-seg" role="listitem">
+        <div class="ico" aria-hidden="true">⚙️</div>
+        <h3>Manufacturing</h3>
+        <p>Operations managers, quality teams, and supervisors looking to cut documentation time and sharpen communications.</p>
+      </div>
+    </div>
   </div>
 </section>
 <!-- /wp:html -->
@@ -210,6 +278,7 @@
             <label for="pd-course-select">Course</label>
             <select id="pd-course-select" name="pd_course">
               <option value="Cyber Protection Awareness">Cyber Protection Awareness</option>
+              <option value="AI for Small Business – for Productivity">AI for Small Business – for Productivity</option>
               <option value="HIPAA & Data Protection Awareness">HIPAA &amp; Data Protection Awareness</option>
               <option value="Not sure — recommend one">Not sure — recommend one</option>
             </select>
