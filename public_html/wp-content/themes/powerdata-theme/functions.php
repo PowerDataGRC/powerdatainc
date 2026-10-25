@@ -255,12 +255,12 @@ function powerdata_handle_contact_form() {
 		wp_send_json_error( [ 'message' => 'Please fill in all required fields.' ] );
 	}
 
-	$to      = get_option( 'admin_email' );
+	$to      = POWERDATA_MAIL_TO;
 	$subject = 'PowerData — New consultation request from ' . $name;
 	$body    = "Name: {$name}\nEmail: {$email}\n\nMessage:\n{$message}";
 	$headers = [
 		'Content-Type: text/plain; charset=UTF-8',
-		'From: PowerData Website <noreply@powerdatainc.com>',
+		'From: PowerData Website <' . POWERDATA_MAIL_FROM . '>',
 		'Reply-To: ' . $name . ' <' . $email . '>',
 	];
 
@@ -295,12 +295,12 @@ function powerdata_handle_enroll_form() {
 		wp_send_json_error( [ 'message' => 'Please fill in your name and email.' ] );
 	}
 
-	$to      = get_option( 'admin_email' );
+	$to      = POWERDATA_MAIL_TO;
 	$subject = 'PowerData — New enrollment request: ' . $course;
 	$body    = "Name: {$name}\nEmail: {$email}\nCourse: {$course}\nLearners: {$learners}";
 	$headers = [
 		'Content-Type: text/plain; charset=UTF-8',
-		'From: PowerData Website <noreply@powerdatainc.com>',
+		'From: PowerData Website <' . POWERDATA_MAIL_FROM . '>',
 		'Reply-To: ' . $name . ' <' . $email . '>',
 	];
 
@@ -314,17 +314,28 @@ function powerdata_handle_enroll_form() {
 }
 
 // ── 5b. OUTBOUND SMTP ────────────────────────────────────────────────────────
-// Password is stored in wp-config.php as: define( 'SMTP_PASSWORD', '...' );
-// wp-config.php is git-ignored so the credential never enters the repo.
+// SendPulse SMTP, shared with priamtiv.com. The credentials are defined outside
+// git in ~/priamtiv.wp-config-local.php (loaded by wp-config.php):
+//   define( 'SENDPULSE_SMTP_USER', '...' );
+//   define( 'SENDPULSE_SMTP_PASS', '...' );
+// If port 465 is blocked, use ENCRYPTION_STARTTLS on port 587 (or 2525).
+define( 'POWERDATA_MAIL_FROM', 'notalking@notify.priamtiv.com' ); // verified SendPulse sender
+define( 'POWERDATA_MAIL_TO',   'letstalk@powerdatainc.com' );     // where form submissions go
+
 add_action( 'phpmailer_init', 'powerdata_smtp_config' );
 function powerdata_smtp_config( $phpmailer ) {
 	$phpmailer->isSMTP();
-	$phpmailer->Host       = 'smtp.titan.email';
+	$phpmailer->Host       = 'smtp-pulse.com';
 	$phpmailer->SMTPAuth   = true;
+	$phpmailer->Username   = defined( 'SENDPULSE_SMTP_USER' ) ? SENDPULSE_SMTP_USER : '';
+	$phpmailer->Password   = defined( 'SENDPULSE_SMTP_PASS' ) ? SENDPULSE_SMTP_PASS : '';
+	$phpmailer->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
 	$phpmailer->Port       = 465;
-	$phpmailer->SMTPSecure = 'ssl';
-	$phpmailer->Username   = 'letstalk@powerdatainc.com';
-	$phpmailer->Password   = defined( 'SMTP_PASSWORD' ) ? SMTP_PASSWORD : '';
+
+	// Always send from the verified sender and keep the Return-Path on that
+	// domain, never the visitor's address.
+	$phpmailer->setFrom( POWERDATA_MAIL_FROM, $phpmailer->FromName, false );
+	$phpmailer->Sender = POWERDATA_MAIL_FROM;
 }
 
 // ── 6. LOCALIZE AJAX DATA FOR JS ─────────────────────────────────────────────
