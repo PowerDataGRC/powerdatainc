@@ -5,7 +5,7 @@ Description:       PowerData Solutions Genesis child theme. Replaces Altitude Pr
 Author:            PowerData Solutions Inc.
 Author URI:        https://powerdatainc.com
 Template:          genesis
-Version:           1.2.1
+Version:           1.2.2
 Tags:              genesis, essential-blocks, gutenberg, small-business
 License:           Private
 Text Domain:       powerdata-theme
@@ -335,7 +335,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Dark band */
 .band-ink { background: var(--ink); color: #DCE3EC; }
 .band-ink h1, .band-ink h2, .band-ink h3 { color: #fff; }
-.band-ink .lede { color: #AEB9C8; }
+.band-ink .lede,
+.pd-cta-band .lede { color: #AEB9C8; }
 
 /* Check list */
 .check { display: flex; align-items: flex-start; gap: 11px; }
@@ -1036,8 +1037,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .pd-article-img {
   width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin-inline: auto;
   border-radius: var(--radius-lg);
-  aspect-ratio: 16 / 7;
+  aspect-ratio: 16 / 9; /* matches the 1600x900 covers so their bottom text isn't cropped */
   object-fit: cover;
   display: block;
 }
