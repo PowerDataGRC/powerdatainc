@@ -71,4 +71,61 @@ function renderCoverHTML(cat) {
 `;
 }
 
-module.exports = { renderCoverHTML };
+/**
+ * Site-wide social-share card (1200×627, LinkedIn/Facebook 1.91:1) used as
+ * og:image for any page that has neither a Featured Image nor a category
+ * cover. Written to covers/og-default.html, so asset paths are relative to
+ * covers/ (theme root is one level up).
+ */
+function renderDefaultCardHTML() {
+	return `<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'Schibsted Grotesk';
+    font-weight: 800;
+    font-style: normal;
+    src: url('../assets/fonts/schibsted-grotesk-800.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Instrument Serif';
+    font-weight: 400;
+    font-style: italic;
+    src: url('../assets/fonts/instrument-serif-italic-400.woff2') format('woff2');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { margin: 0; }
+</style>
+</head>
+<body>
+
+<div id="cover" style="width:1200px;height:627px;overflow:hidden;background:#0F1B2D;
+     position:relative;font-family:'Hanken Grotesk',system-ui,sans-serif;">
+
+  <div style="position:absolute;right:-150px;bottom:-220px;width:620px;height:620px;
+       border-radius:50%;background:#16314A;"></div>
+  <div style="position:absolute;left:-90px;top:-120px;width:300px;height:300px;
+       border-radius:50%;background:#22364A;"></div>
+
+  <div style="position:absolute;inset:0;padding:64px 72px;display:flex;align-items:center;gap:56px;">
+    <img src="../assets/pd-siteicon.png" width="300" height="300" alt=""
+         style="flex:none;display:block;">
+    <div>
+      <h1 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:104px;
+          line-height:1;letter-spacing:-.03em;color:#FAF8F4;">PowerData</h1>
+      <p style="margin-top:20px;font-family:'Instrument Serif',Georgia,serif;font-style:italic;
+          font-size:44px;line-height:1.15;color:#B5D4F4;">Organize, protect, and run<br>your business.</p>
+      <p style="margin-top:34px;font-size:22px;font-weight:600;letter-spacing:.16em;
+          text-transform:uppercase;color:#8FB0CC;">powerdatainc.com</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+`;
+}
+
+module.exports = { renderCoverHTML, renderDefaultCardHTML };
