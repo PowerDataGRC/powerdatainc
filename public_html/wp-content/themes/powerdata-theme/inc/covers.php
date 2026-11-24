@@ -100,3 +100,27 @@ function pd_cover_manifest() {
 	}
 	return $manifest;
 }
+
+/**
+ * Social-share (og:image) URL for a post with no real Featured Image: the
+ * 1200×627 PNG of the same category cover pd_default_cover() shows on the
+ * page (same deterministic pick). '' when the post has no covered category.
+ */
+function pd_cover_og_url( $post_id ) {
+	$terms = get_the_category( $post_id );
+	if ( empty( $terms ) ) {
+		return '';
+	}
+
+	$slug  = $terms[0]->slug;
+	$count = pd_cover_count( $slug );
+	if ( $count < 1 ) {
+		return '';
+	}
+
+	$entry = pd_cover_manifest_entry( $slug, ( $post_id % $count ) + 1 );
+	if ( empty( $entry['og'] ) ) {
+		return '';
+	}
+	return get_stylesheet_directory_uri() . '/covers/' . $entry['og'];
+}

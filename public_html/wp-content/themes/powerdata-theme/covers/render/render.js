@@ -11,7 +11,7 @@ const path = require('path');
 const { chromium } = require('playwright');
 const sharp = require('sharp');
 const categories = require('./data');
-const { renderCoverHTML } = require('./template');
+const { renderCoverHTML, renderDefaultCardHTML } = require('./template');
 
 const COVERS_DIR = path.join(__dirname, '..');
 
@@ -42,6 +42,16 @@ function altText(cat) {
 		const heroFile = `${cat.slug}-01.webp`;
 		await sharp(heroPng).resize(1600, 900).webp({ quality: 82 }).toFile(path.join(COVERS_DIR, heroFile));
 
+		// Social share (og:image) — LinkedIn/Facebook crop to 1.91:1, which
+		// would cut the subhead off a 16:9 image. Re-lay the same cover out at
+		// 1600×836 (1.91:1; the flex column absorbs the shorter height), then
+		// scale to 1200×627. PNG, since not every scraper accepts WebP.
+		await page.evaluate(() => { document.getElementById('cover').style.height = '836px'; });
+		const ogPng = await cover.screenshot();
+		const ogFile = `${cat.slug}-01-og.png`;
+		await sharp(ogPng).resize(1200, 627).png({ compressionLevel: 9 }).toFile(path.join(COVERS_DIR, ogFile));
+		await page.evaluate(() => { document.getElementById('cover').style.height = '900px'; });
+
 		// Thumb — headline-only state
 		await page.evaluate(() => document.getElementById('cover').classList.add('thumb'));
 		const thumbPng = await cover.screenshot();
@@ -51,13 +61,28 @@ function altText(cat) {
 		manifest.push({
 			file: heroFile,
 			thumb: thumbFile,
+			og: ogFile,
 			category: cat.slug,
 			field: cat.field,
 			alt: altText(cat),
 			created: new Date().toISOString().slice(0, 10),
 		});
 
-		console.log(`✓ ${cat.slug} — hero + thumb rendered`);
+		console.log(`✓ ${cat.slug} — hero + og + thumb rendered`);
+	}
+
+	// Site-wide default share card → ../assets/og-default.png
+	{
+		const htmlPath = path.join(COVERS_DIR, 'og-default.html');
+		fs.writeFileSync(htmlPath, renderDefaultCardHTML());
+		const cardPage = await browser.newPage({ viewport: { width: 1200, height: 627 }, deviceScaleFactor: 2 });
+		await cardPage.goto(`file://${htmlPath}`);
+		await cardPage.evaluate(() => document.fonts.ready);
+		const png = await cardPage.locator('#cover').screenshot();
+		await sharp(png).resize(1200, 627).png({ compressionLevel: 9 })
+			.toFile(path.join(COVERS_DIR, '..', 'assets', 'og-default.png'));
+		await cardPage.close();
+		console.log('✓ default share card → assets/og-default.png');
 	}
 
 	fs.writeFileSync(path.join(COVERS_DIR, 'covers.json'), JSON.stringify(manifest, null, 2) + '\n');

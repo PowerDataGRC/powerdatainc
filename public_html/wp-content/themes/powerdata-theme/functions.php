@@ -7,7 +7,7 @@
  */
 
 // ── 1. CONSTANTS ─────────────────────────────────────────────────────────────
-define( 'POWERDATA_VERSION',   '1.2.2' );
+define( 'POWERDATA_VERSION',   '1.2.3' );
 define( 'POWERDATA_DIR',       get_stylesheet_directory() );
 define( 'POWERDATA_URI',       get_stylesheet_directory_uri() );
 define( 'POWERDATA_SITE_NAME', 'PowerData Solutions Inc.' );
@@ -443,30 +443,108 @@ function powerdata_json_ld() {
 }
 
 // ── 8. SEO META TAGS (Open Graph + Twitter Card) ─────────────────────────────
+// Share image (LinkedIn, Facebook, X), most specific first:
+//   1. the post's real Featured Image
+//   2. its category cover as a 1200×627 card (covers/*-og.png — the same
+//      cover the article page shows; see inc/covers.php)
+//   3. the site-wide card, assets/og-default.png
+// Both cards are built by covers/render (npm run render).
+//
+// All in One SEO prints its own OG/Twitter tags; when it's active the theme
+// must not print a second set (LinkedIn picks between duplicates
+// unpredictably). Instead we only swap in our image where AIOSEO's is
+// missing or too small for a large preview card — e.g. its fallback to the
+// 250×50 header logo, which LinkedIn upscales and crops.
+
+/** @return array{0:string,1:int,2:int} [url, width, height] */
+function powerdata_share_image() {
+	if ( is_singular() ) {
+		$post_id = get_queried_object_id();
+		if ( has_post_thumbnail( $post_id ) ) {
+			$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'large' );
+			if ( $img ) {
+				return [ $img[0], (int) $img[1], (int) $img[2] ];
+			}
+		}
+		$cover = pd_cover_og_url( $post_id );
+		if ( $cover ) {
+			return [ $cover, 1200, 627 ];
+		}
+	}
+	return [ POWERDATA_URI . '/assets/og-default.png', 1200, 627 ];
+}
+
+function powerdata_aioseo_active() {
+	return defined( 'AIOSEO_VERSION' ) || function_exists( 'aioseo' );
+}
+
+/**
+ * True when a share image can't make a good large preview: none at all, or
+ * narrower than 600px (LinkedIn/Facebook then upscale + crop it). Width comes
+ * from the tag when AIOSEO gives one, else from the Media Library.
+ */
+function powerdata_share_image_unusable( $url, $width = 0 ) {
+	if ( ! $url ) {
+		return true;
+	}
+	$width = (int) $width;
+	if ( ! $width ) {
+		$id   = attachment_url_to_postid( $url );
+		$meta = $id ? wp_get_attachment_metadata( $id ) : null;
+		$width = (int) ( $meta['width'] ?? 0 );
+	}
+	return $width > 0 && $width < 600;
+}
+
+add_filter( 'aioseo_facebook_tags', 'powerdata_aioseo_facebook_image' );
+function powerdata_aioseo_facebook_image( $tags ) {
+	if ( ! is_array( $tags ) || ! powerdata_share_image_unusable( $tags['og:image'] ?? '', $tags['og:image:width'] ?? 0 ) ) {
+		return $tags;
+	}
+	[ $url, $w, $h ] = powerdata_share_image();
+	$tags['og:image']            = $url;
+	$tags['og:image:secure_url'] = is_ssl() ? $url : '';
+	$tags['og:image:width']      = $w;
+	$tags['og:image:height']     = $h;
+	return $tags;
+}
+
+add_filter( 'aioseo_twitter_tags', 'powerdata_aioseo_twitter_image' );
+function powerdata_aioseo_twitter_image( $tags ) {
+	if ( ! is_array( $tags ) || ! powerdata_share_image_unusable( $tags['twitter:image'] ?? '' ) ) {
+		return $tags;
+	}
+	$tags['twitter:image'] = powerdata_share_image()[0];
+	return $tags;
+}
+
+// Fallback tags only when AIOSEO isn't running.
 add_action( 'wp_head', 'powerdata_og_meta', 2 );
 function powerdata_og_meta() {
+	if ( powerdata_aioseo_active() ) {
+		return;
+	}
 	global $post;
 
 	$title       = wp_get_document_title();
 	$description = get_bloginfo( 'description' );
 	$url         = home_url( '/' );
-	$image       = POWERDATA_URI . '/assets/og-default.png'; // add a 1200×630 OG image
+	$type        = is_singular( 'post' ) ? 'article' : 'website';
+	[ $image, $img_w, $img_h ] = powerdata_share_image();
 
 	if ( is_singular() && $post ) {
 		$description = wp_strip_all_tags( get_the_excerpt( $post ) ) ?: $description;
 		$url         = get_permalink();
-		if ( has_post_thumbnail( $post ) ) {
-			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post ), 'large' );
-			if ( $thumb ) $image = $thumb[0];
-		}
 	}
 	?>
-<meta property="og:type"        content="website">
-<meta property="og:site_name"   content="<?php echo esc_attr( POWERDATA_SITE_NAME ); ?>">
-<meta property="og:title"       content="<?php echo esc_attr( $title ); ?>">
-<meta property="og:description" content="<?php echo esc_attr( $description ); ?>">
-<meta property="og:url"         content="<?php echo esc_url( $url ); ?>">
-<meta property="og:image"       content="<?php echo esc_url( $image ); ?>">
+<meta property="og:type"         content="<?php echo esc_attr( $type ); ?>">
+<meta property="og:site_name"    content="<?php echo esc_attr( POWERDATA_SITE_NAME ); ?>">
+<meta property="og:title"        content="<?php echo esc_attr( $title ); ?>">
+<meta property="og:description"  content="<?php echo esc_attr( $description ); ?>">
+<meta property="og:url"          content="<?php echo esc_url( $url ); ?>">
+<meta property="og:image"        content="<?php echo esc_url( $image ); ?>">
+<meta property="og:image:width"  content="<?php echo (int) $img_w; ?>">
+<meta property="og:image:height" content="<?php echo (int) $img_h; ?>">
 <meta name="twitter:card"        content="summary_large_image">
 <meta name="twitter:title"       content="<?php echo esc_attr( $title ); ?>">
 <meta name="twitter:description" content="<?php echo esc_attr( $description ); ?>">

@@ -18,6 +18,8 @@ covers/
   {slug}.html         generated preview/debug HTML per category (open directly in a browser)
   {slug}-01.webp       hero image, 1600×900
   {slug}-01-thumb.webp thumbnail image, 800×450
+  {slug}-01-og.png     social-share card, 1200×627 (LinkedIn/Facebook og:image)
+  og-default.html      generated preview of the site-wide share card
   covers.json          manifest — file/thumb/category/field/alt/created per cover
   DEVELOPERS.md        this file
 
@@ -45,6 +47,12 @@ Everything category-specific lives in `data.js` — never edit `template.js` for
 2. Text color rule: dark field background → cream text (`#FAF8F4`); bright field background → ink text (`#0F1B2D`). Pick `serifTint`/`supportTint` as lighter/darker variants of the same bucket so the hierarchy (headline > accent word > kicker/subhead) still reads correctly.
 3. Run the pipeline (below). It's fully idempotent — re-running regenerates every category's files and covers.json from scratch, there's no partial/incremental state to worry about.
 4. If it's a genuinely new category (not editing an existing one), also add it to `dev/setup-categories.php` (creates the WP category term) and to the Editorial Guide's category table.
+
+## Social-share images (og:image)
+
+LinkedIn and Facebook crop link previews to 1.91:1, which would cut the subhead off a 16:9 hero. So `render.js` also re-lays each cover out at 1600×836 (same padding and type sizes; the flex column absorbs the shorter height) and saves it as `{slug}-01-og.png` at 1200×627. PNG rather than WebP because not every scraper accepts WebP. It also renders the site-wide card (`renderDefaultCardHTML()` in `template.js`: the PD shield from `../assets/pd-siteicon.png` + "PowerData") to `../assets/og-default.png`.
+
+`functions.php` §8 chooses the share image: a real Featured Image, then the post's category card (`pd_cover_og_url()` in `inc/covers.php`, same pick as the on-page cover), then `og-default.png`. All in One SEO prints the actual tags; the theme only filters `aioseo_facebook_tags` / `aioseo_twitter_tags` to replace an image that is missing or under 600px wide (e.g. AIOSEO's fallback to the 250×50 header logo). It prints its own tags only when AIOSEO is inactive. After changing a share image, re-scrape the URL in LinkedIn's Post Inspector (linkedin.com/post-inspector), since LinkedIn caches previews.
 
 ## Running the pipeline
 
